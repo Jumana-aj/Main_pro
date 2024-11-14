@@ -152,6 +152,20 @@ button:hover{
 
 }
 
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 5%;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 600px) {

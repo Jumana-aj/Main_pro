@@ -40,6 +40,68 @@
     const firstName=document.getElementById('fName').value;
     const lastName=document.getElementById('lName').value;
 
+// Validate First Name (only alphabetic characters, minimum 3 characters)
+if (!/^[A-Za-z]{3,}$/.test(firstName)) {
+    showMessage('First Name must be at least 3 characters long and contain only letters.', 'signUpMessage');
+    return;
+  }
+
+  // Validate Last Name (only alphabetic characters, minimum 3 characters)
+  if (!/^[A-Za-z]{3,}$/.test(lastName)) {
+    showMessage('Last Name must be at least 3 characters long and contain only letters.', 'signUpMessage');
+    return;
+  }
+
+  // Validate Email (contains '@')
+  if (!email.includes('@')) {
+    showMessage('Please enter a valid email address.', 'signUpMessage');
+    return;
+  }
+
+  // Validate Password (at least 8 characters, must contain a number, symbol, and uppercase letter)
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  if (!passwordRegex.test(password)) {
+    showMessage('Password must be at least 8 characters long and contain uppercase, lowercase, a number, and a special symbol.', 'signUpMessage');
+    return;
+  }
+
+  // Check for weak passwords (e.g., "1234567890")
+  if (/^\d{10}$/.test(password)) {
+    showMessage('Password is too weak. Please choose a stronger password.', 'signUpMessage');
+    return;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const auth=getAuth();
     const db=getFirestore();
 
@@ -72,6 +134,53 @@
         }
     })
  });
+// Show/Hide Password with Eye Icon
+const passwordInput = document.getElementById('rPassword');
+const eyeIcon = document.getElementById('eye-icon');
+
+eyeIcon.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    eyeIcon.classList.remove('fa-eye');
+    eyeIcon.classList.add('fa-eye-slash');
+  } else {
+    passwordInput.type = 'password';
+    eyeIcon.classList.remove('fa-eye-slash');
+    eyeIcon.classList.add('fa-eye');
+  }
+});
+
+
+
+
+// Toggle password visibility
+function togglePassword() {
+  const passwordField = document.getElementById('password');
+  const eyeIcon = document.getElementById('eye');
+  
+  if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      eyeIcon.textContent = '🙈'; // Change eye icon to closed
+  } else {
+      passwordField.type = 'password';
+      eyeIcon.textContent = '👁️'; // Change eye icon to open
+  }
+}
+
+// Validate password length
+function validateForm() {
+  const password = document.getElementById('password').value;
+  
+  // Check if password is at least 6 characters long
+  if (password.length < 6) {
+      document.getElementById('passwordError').style.display = 'block';
+      return false;
+  }
+
+  document.getElementById('passwordError').style.display = 'none';
+  return true; // Allow form submission
+}
+
 
  const signIn=document.getElementById('submitSignIn');
  signIn.addEventListener('click', (event)=>{

@@ -1,232 +1,216 @@
-[
-    {
-        "id": 1,
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "email": "Sincere@april.biz",
-        "address": {
-            "street": "Kulas Light",
-            "suite": "Apt. 556",
-            "city": "Gwenborough",
-            "zipcode": "92998-3874",
-            "geo": {
-                "lat": "-37.3159",
-                "lng": "81.1496"
-            }
+ [
+        {
+            "movie_id": 1,
+            "title": "The Greatest of All Time",
+            "original_title": "GOAT",
+            "release_date": "2024-09-05",
+            "language": "Tamil",
+            "genres": [
+                "Action",
+                "Thriller",
+                "Drama"
+            ],
+            "duration": " 3hrs 3mins",
+            "director": "Venkat Prabhu",
+            "producers": [
+                "Kalpathi S. Aghoram",
+                "Kalpathi S. Ganesh",
+                "Kalpathi S. Suresh"
+            ],
+            "music": "Yuvan Shankar Raja",
+            "cast": [
+                "vijay",
+                "meenakshi chaudhary,sneha,prashanth,prabhu deva,ajmal ameer"
+            ],
+            "plot_summary": "The film follows Gandhi (Vijay) and his team of RAW agents, who are caught in a whirlwind of action and danger as their past actions come back to haunt them. With a mix of thrilling sequences and emotional depth, the movie explores revenge, redemption, and the consequences of their past decisions."
         },
-        "phone": "1-770-736-8031 x56442",
-        "website": "hildegard.org",
-        "company": {
-            "name": "Romaguera-Crona",
-            "catchPhrase": "Multi-layered client-server neural-net",
-            "bs": "harness real-time e-markets"
-        }
-    },
-    {
-        "id": 2,
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "email": "Shanna@melissa.tv",
-        "address": {
-            "street": "Victor Plains",
-            "suite": "Suite 879",
-            "city": "Wisokyburgh",
-            "zipcode": "90566-7771",
-            "geo": {
-                "lat": "-43.9509",
-                "lng": "-34.4618"
-            }
+        {
+            "movie_id": 2,
+            "title": "Lubber Pandhu",
+            "release_date": "2024-09-20",
+            "language": "Tamil",
+            "genre": [
+                "Sports",
+                "Drama",
+                "Comedy"
+            ],
+            "duration": "2hr 26mins",
+            "cast": [
+                "harish kalyan",
+                "dinesh ravi",
+                "swasika vijay",
+                "sanjana krishnamoorthy",
+                "bala saravanan"
+            ],
+            "director": "Tamizharasan Pachamuthu",
+            "music": "Sean Roldan",
+            "producer": "S Lakshman Kumar",
+            "plot summary": "A drama centered around a budding cricketer, highlighting themes of love, friendship, and ambition amidst social and family challenges."
         },
-        "phone": "010-692-6593 x09125",
-        "website": "anastasia.net",
-        "company": {
-            "name": "Deckow-Crist",
-            "catchPhrase": "Proactive didactic contingency",
-            "bs": "synergize scalable supply-chains"
-        }
-    },
-    {
-        "id": 3,
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "email": "Nathan@yesenia.net",
-        "address": {
-            "street": "Douglas Extension",
-            "suite": "Suite 847",
-            "city": "McKenziehaven",
-            "zipcode": "59590-4157",
-            "geo": {
-                "lat": "-68.6102",
-                "lng": "-47.0653"
-            }
+        {
+            "movie_id": 3,
+            "title": "Vettaiyan",
+            "language": "Tamil",
+            "genre": [
+                "Action",
+                "Drama"
+            ],
+            "duration": "2h 43m",
+            "release_date": "2024-10-10",
+            "cast": [
+                "Rajinikanth",
+                "amithab bachchan",
+                "fahadh faasil",
+                "manju warrior",
+                "rana daggubati"
+            ],
+            "director": "T. J. Gnanavel",
+            "producer": "Lyca Productions",
+            "music_director": "Anirudh Ravichander",
+            "plot_summary": "Athiyan, a well-known encounter specialist, is tasked with investigating the murder of a teacher. The case reveals larger issues of social injustice and corruption in the educational sector, and Athiyan must decide how far he's willing to go to achieve justice."
         },
-        "phone": "1-463-123-4447",
-        "website": "ramiro.info",
-        "company": {
-            "name": "Romaguera-Jacobson",
-            "catchPhrase": "Face to face bifurcated interface",
-            "bs": "e-enable strategic applications"
-        }
-    },
-    {
-        "id": 4,
-        "name": "Patricia Lebsack",
-        "username": "Karianne",
-        "email": "Julianne.OConner@kory.org",
-        "address": {
-            "street": "Hoeger Mall",
-            "suite": "Apt. 692",
-            "city": "South Elvis",
-            "zipcode": "53919-4257",
-            "geo": {
-                "lat": "29.4572",
-                "lng": "-164.2990"
-            }
+        {
+            "movie_id": 4,
+            "title": "Maharaja",
+            "language": "Tamil",
+            "release_date": "2024-06-14",
+            "genre": [
+                "Thriller",
+                "Drama"
+            ],
+            "director": "Nithilan Swaminathan",
+            "cast": [
+                "vijay sethupathy",
+                "sachana namidass",
+                "anurag kashyap",
+                "mamta mohandas"
+            ],
+            "plot_summary": "The story follows Maharaja, a barber who reveres a garbage bin named Lakshmi and unexpectedly becomes entangled in a tragic incident that turns his life upside down. When a truck crashes into a house, killing most of the family, Maharaja adopts the only survivor, Ammu, renaming her Jothi and raising her as his daughter. The film builds tension around Maharaja and Selvam as they uncover dark truths and face shocking revelations.",
+            "duration": "140 mins",
+            "music_director": "ajanesh loknath",
+            "producer": "sudhan."
         },
-        "phone": "493-170-9623 x156",
-        "website": "kale.biz",
-        "company": {
-            "name": "Robel-Corkery",
-            "catchPhrase": "Multi-tiered zero tolerance productivity",
-            "bs": "transition cutting-edge web services"
-        }
-    },
-    {
-        "id": 5,
-        "name": "Chelsey Dietrich",
-        "username": "Kamren",
-        "email": "Lucio_Hettinger@annie.ca",
-        "address": {
-            "street": "Skiles Walks",
-            "suite": "Suite 351",
-            "city": "Roscoeview",
-            "zipcode": "33263",
-            "geo": {
-                "lat": "-31.8129",
-                "lng": "62.5342"
-            }
+        {
+            "movie_id": 5,
+            "title": "indian-2",
+            "language": "Tamil",
+            "release_date": "2024-01-26",
+            "genre": [
+                "action",
+                "thriller",
+                "drama"
+            ],
+            "director": "s.shankar",
+            "cast": [
+                "kamal hassan",
+                "siddharth",
+                "priya bhavani shankar",
+                "rakul preet singh",
+                "kajal aggarwal"
+            ],
+            "plot_summary": "A vigilante returns to clean up corruption in India, continuing his relentless fight against government officials who exploit their power.",
+            "duration": "3hr",
+            "music_director": "Anirudh Ravichander",
+            "producer": [
+                "subaskaran allirajah"
+            ]
         },
-        "phone": "(254)954-1289",
-        "website": "demarco.info",
-        "company": {
-            "name": "Keebler LLC",
-            "catchPhrase": "User-centric fault-tolerant solution",
-            "bs": "revolutionize end-to-end systems"
-        }
-    },
-    {
-        "id": 6,
-        "name": "Mrs. Dennis Schulist",
-        "username": "Leopoldo_Corkery",
-        "email": "Karley_Dach@jasper.info",
-        "address": {
-            "street": "Norberto Crossing",
-            "suite": "Apt. 950",
-            "city": "South Christy",
-            "zipcode": "23505-1337",
-            "geo": {
-                "lat": "-71.4197",
-                "lng": "71.7478"
-            }
+        {
+            "movie_id": 6,
+            "title": "maaveeran",
+            "language": "Tamil",
+            "release_date": "2024-07-14",
+            "genre": [
+                "action",
+                "fantasy"
+            ],
+            "director": [
+                "madonne ashwin"
+            ],
+            "producer": [
+                "shanthi talkies"
+            ],
+            "cast": [
+                "sivakarthikeyan",
+                "aditi shankar",
+                "myskkin",
+                "saritha"
+            ],
+            "plot_summary": "A reluctant hero is thrust into a fantastical adventure, where he must embrace his destiny to save his village from dark forces.",
+            "duration": "155 mins",
+            "music_director": "bharat sankar"
         },
-        "phone": "1-477-935-8478 x6430",
-        "website": "ola.org",
-        "company": {
-            "name": "Considine-Lockman",
-            "catchPhrase": "Synchronised bottom-line interface",
-            "bs": "e-enable innovative applications"
-        }
-    },
-    {
-        "id": 7,
-        "name": "Kurtis Weissnat",
-        "username": "Elwyn.Skiles",
-        "email": "Telly.Hoeger@billy.biz",
-        "address": {
-            "street": "Rex Trail",
-            "suite": "Suite 280",
-            "city": "Howemouth",
-            "zipcode": "58804-1099",
-            "geo": {
-                "lat": "24.8918",
-                "lng": "21.8984"
-            }
+        {
+            "movie_id": 7,
+            "title": "irugapatru",
+            "language": "Tamil",
+            "release_date": "2024-09-15",
+            "genre": [
+                "Drama",
+                "romance"
+            ],
+            "director": [
+                "yuvaraj dhayalan"
+            ],
+            "producer": [
+                "potential studios"
+            ],
+            "cast": [
+                "vikram prabhu",
+                "shraddha srinath",
+                "vidharth",
+                "abarnathi"
+            ],
+            "plot_summary": "An emotional drama that explores complex relationships and the intricacies of love and trust among modern couples.",
+            "duration": "145 mins",
+            "music_director": "justin prabhakaran"
         },
-        "phone": "210.067.6132",
-        "website": "elvis.io",
-        "company": {
-            "name": "Johns Group",
-            "catchPhrase": "Configurable multimedia task-force",
-            "bs": "generate enterprise e-tailers"
-        }
-    },
-    {
-        "id": 8,
-        "name": "Nicholas Runolfsdottir V",
-        "username": "Maxime_Nienow",
-        "email": "Sherwood@rosamond.me",
-        "address": {
-            "street": "Ellsworth Summit",
-            "suite": "Suite 729",
-            "city": "Aliyaview",
-            "zipcode": "45169",
-            "geo": {
-                "lat": "-14.3990",
-                "lng": "-120.7677"
-            }
+        {
+            "movie_id": 8,
+            "title": "ayalaan",
+            "language": "Tamil",
+            "release_date": "2024-01-14",
+            "genre": [
+                "Sci-Fi",
+                "Comedy",
+                "Adventure"
+            ],
+            "director": "r.ravikumar",
+            "producer": [
+                "kotpadi j.rajesh"
+            ],
+            "cast": [
+                "sivakarthikeyan",
+                "rakul preet singh",
+                "sharad kelkar",
+                "isha koppikar"
+            ],
+            "plot_summary": "An extraterrestrial being lands on Earth and teams up with a young scientist to embark on a thrilling adventure to save the planet.",
+            "duration": "2 hrs 30 mins",
+            "music_director": "a.r rahman"
         },
-        "phone": "586.493.6943 x140",
-        "website": "jacynthe.com",
-        "company": {
-            "name": "Abernathy Group",
-            "catchPhrase": "Implemented secondary concept",
-            "bs": "e-enable extensible e-tailers"
+        {
+            "movie_id": 9,
+            "title": "jailer",
+            "language": "Tamil",
+            "release_date": "2024-08-10",
+            "genre": [
+                "action",
+                "drama"
+            ],
+            "director": "nelson dilipkumar",
+            "producer": [
+                "kalanithi maran"
+            ],
+            "cast": [
+                "Rajinikanth",
+                "tamannah bhatia",
+                "vinayakan",
+                "ramya krishnan",
+                "yogi babu"
+            ],
+            "plot_summary": "A retired jailer is forced back into action when his family is targeted by a dangerous gang. He must use his skills to protect his loved ones.",
+            "duration": "2hrs 49 mins",
+            "music_director": "Anirudh Ravichander"
         }
-    },
-    {
-        "id": 9,
-        "name": "Glenna Reichert",
-        "username": "Delphine",
-        "email": "Chaim_McDermott@dana.io",
-        "address": {
-            "street": "Dayna Park",
-            "suite": "Suite 449",
-            "city": "Bartholomebury",
-            "zipcode": "76495-3109",
-            "geo": {
-                "lat": "24.6463",
-                "lng": "-168.8889"
-            }
-        },
-        "phone": "(775)976-6794 x41206",
-        "website": "conrad.com",
-        "company": {
-            "name": "Yost and Sons",
-            "catchPhrase": "Switchable contextually-based project",
-            "bs": "aggregate real-time technologies"
-        }
-    },
-    {
-        "id": 10,
-        "name": "Clementina DuBuque",
-        "username": "Moriah.Stanton",
-        "email": "Rey.Padberg@karina.biz",
-        "address": {
-            "street": "Kattie Turnpike",
-            "suite": "Suite 198",
-            "city": "Lebsackbury",
-            "zipcode": "31428-2261",
-            "geo": {
-                "lat": "-38.2386",
-                "lng": "57.2232"
-            }
-        },
-        "phone": "024-648-3804",
-        "website": "ambrose.net",
-        "company": {
-            "name": "Hoeger LLC",
-            "catchPhrase": "Centralized empowering task-force",
-            "bs": "target end-to-end models"
-        }
-    }
-]
+    ]
