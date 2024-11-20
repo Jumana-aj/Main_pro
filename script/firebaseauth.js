@@ -18,7 +18,7 @@
    // Initialize Firebase
    const app = initializeApp(firebaseConfig);
    if(localStorage.getItem('loggedInUserId')){
-       window.location.href="homepage.html";
+       window.location.href="./pages/homepage.html";
 
    }
 
@@ -41,14 +41,15 @@
     const lastName=document.getElementById('lName').value;
 
 // Validate First Name (only alphabetic characters, minimum 3 characters)
-if (!/^[A-Za-z]{3,}$/.test(firstName)) {
-    showMessage('First Name must be at least 3 characters long and contain only letters.', 'signUpMessage');
-    return;
-  }
+if (firstName.length < 6 ||  !/^[A-Z][a-zA-Z]*$/.test(firstName)) {
+  showMessage('First Name must be at least 6 characters long and contain only letters.', 'signUpMessage');
+  return;
+}
+
 
   // Validate Last Name (only alphabetic characters, minimum 3 characters)
-  if (!/^[A-Za-z]{3,}$/.test(lastName)) {
-    showMessage('Last Name must be at least 3 characters long and contain only letters.', 'signUpMessage');
+  if (lastName.length < 6 ||  !/^[A-Z][a-zA-Z]*$/.test(lastName)) {
+    showMessage('Last Name must be at least 6 characters long and contain only letters.', 'signUpMessage');
     return;
   }
 
@@ -70,38 +71,6 @@ if (!/^[A-Za-z]{3,}$/.test(firstName)) {
     showMessage('Password is too weak. Please choose a stronger password.', 'signUpMessage');
     return;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const auth=getAuth();
     const db=getFirestore();
 
@@ -135,37 +104,25 @@ if (!/^[A-Za-z]{3,}$/.test(firstName)) {
     })
  });
 // Show/Hide Password with Eye Icon
-const passwordInput = document.getElementById('rPassword');
-const eyeIcon = document.getElementById('eye-icon');
+// const passwordInput = document.getElementById('rPassword');
+// const eyeIcon = document.getElementById('eye-icon');
 
-eyeIcon.addEventListener('click', () => {
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-    eyeIcon.classList.remove('fa-eye');
-    eyeIcon.classList.add('fa-eye-slash');
-  } else {
-    passwordInput.type = 'password';
-    eyeIcon.classList.remove('fa-eye-slash');
-    eyeIcon.classList.add('fa-eye');
-  }
-});
-
-
+// eyeIcon.addEventListener('click', () => {
+//   if (passwordInput.type === 'password') {
+//     passwordInput.type = 'text';
+//     eyeIcon.classList.remove('fa-eye');
+//     eyeIcon.classList.add('fa-eye-slash');
+//   } else {
+//     passwordInput.type = 'password';
+//     eyeIcon.classList.remove('fa-eye-slash');
+//     eyeIcon.classList.add('fa-eye');
+//   }
+// });
 
 
-// Toggle password visibility
-function togglePassword() {
-  const passwordField = document.getElementById('password');
-  const eyeIcon = document.getElementById('eye');
-  
-  if (passwordField.type === 'password') {
-      passwordField.type = 'text';
-      eyeIcon.textContent = '🙈'; // Change eye icon to closed
-  } else {
-      passwordField.type = 'password';
-      eyeIcon.textContent = '👁️'; // Change eye icon to open
-  }
-}
+
+
+
 
 // Validate password length
 function validateForm() {
@@ -194,7 +151,7 @@ function validateForm() {
         showMessage('login is successful', 'signInMessage');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='homepage.html';
+        window.location.href='../pages/homepage.html';
     })
     .catch((error)=>{
         const errorCode=error.code;

@@ -1,216 +1,248 @@
- [
-        {
-            "movie_id": 1,
-            "title": "The Greatest of All Time",
-            "original_title": "GOAT",
-            "release_date": "2024-09-05",
-            "language": "Tamil",
-            "genres": [
-                "Action",
-                "Thriller",
-                "Drama"
-            ],
-            "duration": " 3hrs 3mins",
-            "director": "Venkat Prabhu",
-            "producers": [
-                "Kalpathi S. Aghoram",
-                "Kalpathi S. Ganesh",
-                "Kalpathi S. Suresh"
-            ],
-            "music": "Yuvan Shankar Raja",
-            "cast": [
-                "vijay",
-                "meenakshi chaudhary,sneha,prashanth,prabhu deva,ajmal ameer"
-            ],
-            "plot_summary": "The film follows Gandhi (Vijay) and his team of RAW agents, who are caught in a whirlwind of action and danger as their past actions come back to haunt them. With a mix of thrilling sequences and emotional depth, the movie explores revenge, redemption, and the consequences of their past decisions."
-        },
-        {
-            "movie_id": 2,
-            "title": "Lubber Pandhu",
-            "release_date": "2024-09-20",
-            "language": "Tamil",
-            "genre": [
-                "Sports",
-                "Drama",
-                "Comedy"
-            ],
-            "duration": "2hr 26mins",
-            "cast": [
-                "harish kalyan",
-                "dinesh ravi",
-                "swasika vijay",
-                "sanjana krishnamoorthy",
-                "bala saravanan"
-            ],
-            "director": "Tamizharasan Pachamuthu",
-            "music": "Sean Roldan",
-            "producer": "S Lakshman Kumar",
-            "plot summary": "A drama centered around a budding cricketer, highlighting themes of love, friendship, and ambition amidst social and family challenges."
-        },
-        {
-            "movie_id": 3,
-            "title": "Vettaiyan",
-            "language": "Tamil",
-            "genre": [
-                "Action",
-                "Drama"
-            ],
-            "duration": "2h 43m",
-            "release_date": "2024-10-10",
-            "cast": [
-                "Rajinikanth",
-                "amithab bachchan",
-                "fahadh faasil",
-                "manju warrior",
-                "rana daggubati"
-            ],
-            "director": "T. J. Gnanavel",
-            "producer": "Lyca Productions",
-            "music_director": "Anirudh Ravichander",
-            "plot_summary": "Athiyan, a well-known encounter specialist, is tasked with investigating the murder of a teacher. The case reveals larger issues of social injustice and corruption in the educational sector, and Athiyan must decide how far he's willing to go to achieve justice."
-        },
-        {
-            "movie_id": 4,
-            "title": "Maharaja",
-            "language": "Tamil",
-            "release_date": "2024-06-14",
-            "genre": [
-                "Thriller",
-                "Drama"
-            ],
-            "director": "Nithilan Swaminathan",
-            "cast": [
-                "vijay sethupathy",
-                "sachana namidass",
-                "anurag kashyap",
-                "mamta mohandas"
-            ],
-            "plot_summary": "The story follows Maharaja, a barber who reveres a garbage bin named Lakshmi and unexpectedly becomes entangled in a tragic incident that turns his life upside down. When a truck crashes into a house, killing most of the family, Maharaja adopts the only survivor, Ammu, renaming her Jothi and raising her as his daughter. The film builds tension around Maharaja and Selvam as they uncover dark truths and face shocking revelations.",
-            "duration": "140 mins",
-            "music_director": "ajanesh loknath",
-            "producer": "sudhan."
-        },
-        {
-            "movie_id": 5,
-            "title": "indian-2",
-            "language": "Tamil",
-            "release_date": "2024-01-26",
-            "genre": [
-                "action",
-                "thriller",
-                "drama"
-            ],
-            "director": "s.shankar",
-            "cast": [
-                "kamal hassan",
-                "siddharth",
-                "priya bhavani shankar",
-                "rakul preet singh",
-                "kajal aggarwal"
-            ],
-            "plot_summary": "A vigilante returns to clean up corruption in India, continuing his relentless fight against government officials who exploit their power.",
-            "duration": "3hr",
-            "music_director": "Anirudh Ravichander",
-            "producer": [
-                "subaskaran allirajah"
-            ]
-        },
-        {
-            "movie_id": 6,
-            "title": "maaveeran",
-            "language": "Tamil",
-            "release_date": "2024-07-14",
-            "genre": [
-                "action",
-                "fantasy"
-            ],
-            "director": [
-                "madonne ashwin"
-            ],
-            "producer": [
-                "shanthi talkies"
-            ],
-            "cast": [
-                "sivakarthikeyan",
-                "aditi shankar",
-                "myskkin",
-                "saritha"
-            ],
-            "plot_summary": "A reluctant hero is thrust into a fantastical adventure, where he must embrace his destiny to save his village from dark forces.",
-            "duration": "155 mins",
-            "music_director": "bharat sankar"
-        },
-        {
-            "movie_id": 7,
-            "title": "irugapatru",
-            "language": "Tamil",
-            "release_date": "2024-09-15",
-            "genre": [
-                "Drama",
-                "romance"
-            ],
-            "director": [
-                "yuvaraj dhayalan"
-            ],
-            "producer": [
-                "potential studios"
-            ],
-            "cast": [
-                "vikram prabhu",
-                "shraddha srinath",
-                "vidharth",
-                "abarnathi"
-            ],
-            "plot_summary": "An emotional drama that explores complex relationships and the intricacies of love and trust among modern couples.",
-            "duration": "145 mins",
-            "music_director": "justin prabhakaran"
-        },
-        {
-            "movie_id": 8,
-            "title": "ayalaan",
-            "language": "Tamil",
-            "release_date": "2024-01-14",
-            "genre": [
-                "Sci-Fi",
-                "Comedy",
-                "Adventure"
-            ],
-            "director": "r.ravikumar",
-            "producer": [
-                "kotpadi j.rajesh"
-            ],
-            "cast": [
-                "sivakarthikeyan",
-                "rakul preet singh",
-                "sharad kelkar",
-                "isha koppikar"
-            ],
-            "plot_summary": "An extraterrestrial being lands on Earth and teams up with a young scientist to embark on a thrilling adventure to save the planet.",
-            "duration": "2 hrs 30 mins",
-            "music_director": "a.r rahman"
-        },
-        {
-            "movie_id": 9,
-            "title": "jailer",
-            "language": "Tamil",
-            "release_date": "2024-08-10",
-            "genre": [
-                "action",
-                "drama"
-            ],
-            "director": "nelson dilipkumar",
-            "producer": [
-                "kalanithi maran"
-            ],
-            "cast": [
-                "Rajinikanth",
-                "tamannah bhatia",
-                "vinayakan",
-                "ramya krishnan",
-                "yogi babu"
-            ],
-            "plot_summary": "A retired jailer is forced back into action when his family is targeted by a dangerous gang. He must use his skills to protect his loved ones.",
-            "duration": "2hrs 49 mins",
-            "music_director": "Anirudh Ravichander"
-        }
-    ]
+[
+    {
+        "movie_id": 1,
+        "title": "The Greatest of All Time",
+        "original_title": "GOAT",
+        "release_date": "2024-09-05",
+        "language": "Tamil",
+        "genres": [
+            "Action",
+            "Thriller",
+            "Drama"
+        ],
+        "duration": " 3hrs 3mins",
+        "director": "Venkat Prabhu",
+        "producers": [
+            "Kalpathi S. Aghoram",
+            "Kalpathi S. Ganesh",
+            "Kalpathi S. Suresh"
+        ],
+        "music": "Yuvan Shankar Raja",
+        "cast": [
+            "vijay",
+            "meenakshi chaudhary,sneha,prashanth,prabhu deva,ajmal ameer"
+        ],
+        "plot_summary": "The film follows Gandhi (Vijay) and his team of RAW agents, who are caught in a whirlwind of action and danger as their past actions come back to haunt them. With a mix of thrilling sequences and emotional depth, the movie explores revenge, redemption, and the consequences of their past decisions.",
+        "movieimg": "https://moviegalleri.net/wp-content/gallery/goathd/GOAT-Movie-HD-Images-1aa86f4.jpg"
+    },
+    {
+        "movie_id": 2,
+        "title": "Lubber Pandhu",
+        "release_date": "2024-09-20",
+        "language": "Tamil",
+        "genre": [
+            "Sports",
+            "Drama",
+            "Comedy"
+        ],
+        "duration": "2hr 26mins",
+        "cast": [
+            "harish kalyan",
+            "dinesh ravi",
+            "swasika vijay",
+            "sanjana krishnamoorthy",
+            "bala saravanan"
+        ],
+        "director": "Tamizharasan Pachamuthu",
+        "music": "Sean Roldan",
+        "producer": "S Lakshman Kumar",
+        "plot summary": "A drama centered around a budding cricketer, highlighting themes of love, friendship, and ambition amidst social and family challenges.",
+        "movieimg": "https://i.redd.it/zlunha8qrxpd1.jpeg"
+    },
+    {
+        "movie_id": 3,
+        "title": "Vettaiyan",
+        "language": "Tamil",
+        "genre": [
+            "Action",
+            "Drama"
+        ],
+        "duration": "2h 43m",
+        "release_date": "2024-10-10",
+        "cast": [
+            "Rajinikanth",
+            "amithab bachchan",
+            "fahadh faasil",
+            "manju warrior",
+            "rana daggubati"
+        ],
+        "director": "T. J. Gnanavel",
+        "producer": "Lyca Productions",
+        "music_director": "Anirudh Ravichander",
+        "plot_summary": "Athiyan, a well-known encounter specialist, is tasked with investigating the murder of a teacher. The case reveals larger issues of social injustice and corruption in the educational sector, and Athiyan must decide how far he's willing to go to achieve justice.",
+        "movieimg": "https://i0.wp.com/moviegalleri.net/wp-content/uploads/2024/01/Rajinikanth-Vettaiyan-Movie-Pongal-Wishes-Poster-HD.jpg?ssl=1"
+    },
+    {
+        "movie_id": 4,
+        "title": "Maharaja",
+        "language": "Tamil",
+        "release_date": "2024-06-14",
+        "genre": [
+            "Thriller",
+            "Drama"
+        ],
+        "director": "Nithilan Swaminathan",
+        "cast": [
+            "vijay sethupathy",
+            "sachana namidass",
+            "anurag kashyap",
+            "mamta mohandas"
+        ],
+        "plot_summary": "The story follows Maharaja, a barber who reveres a garbage bin named Lakshmi and unexpectedly becomes entangled in a tragic incident that turns his life upside down. When a truck crashes into a house, killing most of the family, Maharaja adopts the only survivor, Ammu, renaming her Jothi and raising her as his daughter. The film builds tension around Maharaja and Selvam as they uncover dark truths and face shocking revelations.",
+        "duration": "140 mins",
+        "music_director": "ajanesh loknath",
+        "producer": "sudhan.",
+        "movieimg": "https://m.media-amazon.com/images/M/MV5BNWJmMmUwZjAtYTM1Ni00ZDY3LWE0ZGItOWQ1ZTYxMTlkZDc1XkEyXkFqcGc@._V1_.jpg"
+    },
+    {
+        "movie_id": 5,
+        "title": "indian-2",
+        "language": "Tamil",
+        "release_date": "2024-01-26",
+        "genre": [
+            "action",
+            "thriller",
+            "drama"
+        ],
+        "director": "s.shankar",
+        "cast": [
+            "kamal hassan",
+            "siddharth",
+            "priya bhavani shankar",
+            "rakul preet singh",
+            "kajal aggarwal"
+        ],
+        "plot_summary": "A vigilante returns to clean up corruption in India, continuing his relentless fight against government officials who exploit their power.",
+        "duration": "3hr",
+        "music_director": "Anirudh Ravichander",
+        "producer": [
+            "subaskaran allirajah"
+        ],
+        "movieimg": "https://static.toiimg.com/photo/111682511.cms?imgsize=148762"
+    },
+    {
+        "movie_id": 6,
+        "title": "maaveeran",
+        "language": "Tamil",
+        "release_date": "2024-07-14",
+        "genre": [
+            "action",
+            "fantasy"
+        ],
+        "director": [
+            "madonne ashwin"
+        ],
+        "producer": [
+            "shanthi talkies"
+        ],
+        "cast": [
+            "sivakarthikeyan",
+            "aditi shankar",
+            "myskkin",
+            "saritha"
+        ],
+        "plot_summary": "A reluctant hero is thrust into a fantastical adventure, where he must embrace his destiny to save his village from dark forces.",
+        "duration": "155 mins",
+        "music_director": "bharat sankar",
+        "movieimg": "https://moviegalleri.net/wp-content/uploads/2022/07/Sivakarthikeyan-Maaveeran-Movie-First-Look-HD-Poster.jpg"
+    },
+    {
+        "movie_id": 7,
+        "title": "irugapatru",
+        "language": "Tamil",
+        "release_date": "2024-09-15",
+        "genre": [
+            "Drama",
+            "romance"
+        ],
+        "director": [
+            "yuvaraj dhayalan"
+        ],
+        "producer": [
+            "potential studios"
+        ],
+        "cast": [
+            "vikram prabhu",
+            "shraddha srinath",
+            "vidharth",
+            "abarnathi"
+        ],
+        "plot_summary": "An emotional drama that explores complex relationships and the intricacies of love and trust among modern couples.",
+        "duration": "145 mins",
+        "music_director": "justin prabhakaran",
+        "movieimg": "https://pbs.twimg.com/media/F-TtRyyXQAAyQeS.jpg:large"
+    },
+    {
+        "movie_id": 8,
+        "title": "ayalaan",
+        "language": "Tamil",
+        "release_date": "2024-01-14",
+        "genre": [
+            "Sci-Fi",
+            "Comedy",
+            "Adventure"
+        ],
+        "director": "r.ravikumar",
+        "producer": [
+            "kotpadi j.rajesh"
+        ],
+        "cast": [
+            "sivakarthikeyan",
+            "rakul preet singh",
+            "sharad kelkar",
+            "isha koppikar"
+        ],
+        "plot_summary": "An extraterrestrial being lands on Earth and teams up with a young scientist to embark on a thrilling adventure to save the planet.",
+        "duration": "2 hrs 30 mins",
+        "music_director": "a.r rahman",
+        "movieimg": "https://img.lazcdn.com/g/ff/kf/S3e792ab044f84a81a82e810bb34b1294s.jpg_720x720q80.jpg"
+    },
+    {
+        "movie_id": 9,
+        "title": "jailer",
+        "language": "Tamil",
+        "release_date": "2024-08-10",
+        "genre": [
+            "action",
+            "drama"
+        ],
+        "director": "nelson dilipkumar",
+        "producer": [
+            "kalanithi maran"
+        ],
+        "cast": [
+            "Rajinikanth",
+            "tamannah bhatia",
+            "vinayakan",
+            "ramya krishnan",
+            "yogi babu"
+        ],
+        "plot_summary": "A retired jailer is forced back into action when his family is targeted by a dangerous gang. He must use his skills to protect his loved ones.",
+        "duration": "2hrs 49 mins",
+        "music_director": "Anirudh Ravichander",
+        "movieimg": "https://static.toiimg.com/photo/92282228.cms"
+    },
+    {
+        "movie_id": 10,
+        "title": "Thiruchitrambalam",
+        "release_year": 2022,
+        "director": "Mithran R. Jawahar",
+        "cast": [
+            "Dhanush",
+            "Nithya Menen",
+            "Priya Bhavani Shankar",
+            "Bharathiraja",
+            "Raadhika Sarathkumar"],
+        "genre": ["Drama","Romance"],
+    
+    "language": "Tamil",
+    "runtime": "139 minutes",
+    "plot": "Thiruchitrambalam is a heartwarming story about a man dealing with life's emotional and personal struggles, while navigating complex relationships with his family and friends. His life is intertwined with moments of love, loss, and nostalgia, and the film portrays his journey toward self-discovery and healing.",
+    "music": "Anirudh Ravichander",
+    "movieimg":"https://static.qobuz.com/images/covers/2a/34/awb3hia2b342a_600.jpg"
+    },
+    {
+    
+    }
+
+]
