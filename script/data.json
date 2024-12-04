@@ -10,7 +10,7 @@
             "Thriller",
             "Drama"
         ],
-        "duration": " 3hrs 3mins",
+        "duration": "3hrs 3mins",
         "director": "Venkat Prabhu",
         "producers": [
             "Kalpathi S. Aghoram",
@@ -20,7 +20,11 @@
         "music": "Yuvan Shankar Raja",
         "cast": [
             "vijay",
-            "meenakshi chaudhary,sneha,prashanth,prabhu deva,ajmal ameer"
+            "meenakshi chaudhary",
+            "sneha",
+            "prashanth",
+            "prabhu deva",
+            "ajmal ameer"
         ],
         "plot_summary": "The film follows Gandhi (Vijay) and his team of RAW agents, who are caught in a whirlwind of action and danger as their past actions come back to haunt them. With a mix of thrilling sequences and emotional depth, the movie explores revenge, redemption, and the consequences of their past decisions.",
         "movieimg": "https://moviegalleri.net/wp-content/gallery/goathd/GOAT-Movie-HD-Images-1aa86f4.jpg"
@@ -30,7 +34,7 @@
         "title": "Lubber Pandhu",
         "release_date": "2024-09-20",
         "language": "Tamil",
-        "genre": [
+        "genres": [
             "Sports",
             "Drama",
             "Comedy"
@@ -46,14 +50,14 @@
         "director": "Tamizharasan Pachamuthu",
         "music": "Sean Roldan",
         "producer": "S Lakshman Kumar",
-        "plot summary": "A drama centered around a budding cricketer, highlighting themes of love, friendship, and ambition amidst social and family challenges.",
+        "plot_summary": "A drama centered around a budding cricketer, highlighting themes of love, friendship, and ambition amidst social and family challenges.",
         "movieimg": "https://i.redd.it/zlunha8qrxpd1.jpeg"
     },
     {
         "movie_id": 3,
         "title": "Vettaiyan",
         "language": "Tamil",
-        "genre": [
+        "genres": [
             "Action",
             "Drama"
         ],
@@ -77,7 +81,7 @@
         "title": "Maharaja",
         "language": "Tamil",
         "release_date": "2024-06-14",
-        "genre": [
+        "genres": [
             "Thriller",
             "Drama"
         ],
@@ -99,7 +103,7 @@
         "title": "indian-2",
         "language": "Tamil",
         "release_date": "2024-01-26",
-        "genre": [
+        "genres": [
             "action",
             "thriller",
             "drama"
@@ -125,13 +129,11 @@
         "title": "maaveeran",
         "language": "Tamil",
         "release_date": "2024-07-14",
-        "genre": [
+        "genres": [
             "action",
             "fantasy"
         ],
-        "director": [
-            "madonne ashwin"
-        ],
+        "director": "madonne ashwin",
         "producer": [
             "shanthi talkies"
         ],
@@ -151,13 +153,11 @@
         "title": "irugapatru",
         "language": "Tamil",
         "release_date": "2024-09-15",
-        "genre": [
+        "genres": [
             "Drama",
             "romance"
         ],
-        "director": [
-            "yuvaraj dhayalan"
-        ],
+        "director": "yuvaraj dhayalan",
         "producer": [
             "potential studios"
         ],
@@ -177,7 +177,7 @@
         "title": "ayalaan",
         "language": "Tamil",
         "release_date": "2024-01-14",
-        "genre": [
+        "genres": [
             "Sci-Fi",
             "Comedy",
             "Adventure"
@@ -202,7 +202,7 @@
         "title": "jailer",
         "language": "Tamil",
         "release_date": "2024-08-10",
-        "genre": [
+        "genres": [
             "action",
             "drama"
         ],
@@ -214,35 +214,178 @@
             "Rajinikanth",
             "tamannah bhatia",
             "vinayakan",
-            "ramya krishnan",
-            "yogi babu"
+            "ramya krishnan"
         ],
-        "plot_summary": "A retired jailer is forced back into action when his family is targeted by a dangerous gang. He must use his skills to protect his loved ones.",
-        "duration": "2hrs 49 mins",
-        "music_director": "Anirudh Ravichander",
-        "movieimg": "https://static.toiimg.com/photo/92282228.cms"
+        "plot_summary": "A retired prison officer must reunite with his old team to thwart a dangerous criminal plot, leading to intense action and emotional stakes.",
+        "duration": "175 mins",
+        "music_director": "anirudh ravichander",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/c/cb/Jailer_2023_Tamil_film_poster.jpg"
     },
     {
         "movie_id": 10,
-        "title": "Thiruchitrambalam",
-        "release_year": 2022,
-        "director": "Mithran R. Jawahar",
+        "title": "mookuthi amman",
+        "language": "Tamil",
+        "release_date": "2024-10-25",
+        "genres": [
+            "comedy",
+            "drama"
+        ],
+        "director": "ram kumar",
         "cast": [
-            "Dhanush",
-            "Nithya Menen",
-            "Priya Bhavani Shankar",
-            "Bharathiraja",
-            "Raadhika Sarathkumar"],
-        "genre": ["Drama","Romance"],
-    
-    "language": "Tamil",
-    "runtime": "139 minutes",
-    "plot": "Thiruchitrambalam is a heartwarming story about a man dealing with life's emotional and personal struggles, while navigating complex relationships with his family and friends. His life is intertwined with moments of love, loss, and nostalgia, and the film portrays his journey toward self-discovery and healing.",
-    "music": "Anirudh Ravichander",
-    "movieimg":"https://static.qobuz.com/images/covers/2a/34/awb3hia2b342a_600.jpg"
+            "nayanthara",
+            "madhavan",
+            "uruppi",
+            "r.j balaji",
+            "siva kumar"
+        ],
+        "plot_summary": "A woman discovers her divine powers after coming across a magical artifact, leading her to embark on an adventure to save her village from a series of mysterious happenings.",
+        "duration": "145 mins",
+        "music_director":"girish gopalakrishnan",
+        "movieimg":"https://m.media-amazon.com/images/M/MV5BNzk1MWNiYjctY2IyYi00YTBjLWIyMjgtM2JlZmE1OGQyOTUxXkEyXkFqcGc@._V1_.jpg"
     },
     {
-    
+        "movie_id":11,
+        "title":"raghuthatha",
+        "language":"Tamil",
+        "release_date":"2024-08-15",
+        "genres":["Comedy","Drama"],
+        "director":"suman kumar",
+        "cast":["keerthi suresh","m.s bhaskar","ravindra vijay","anandasaamy"],
+        "plot_summary":"Kayalvizhi Pandian, an upper-division clerk at the Valluvenpettai branch of the Madras Central Bank, is a fervent feminist and anti-Hindi imposition activist. She also writes stories under the male pseudonym 'Ka. Pandian', as female authors are often met with a lower readership.",
+        "duration":"2 hrs 14 mins",
+        "music_director":"sean rolden",
+        "movieimg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrO9JgNBOURgzsj0Tif72O0b1LRlJOQ88sfw&s"
+    },
+    {
+       "movie_id":12,
+       "title":"aranmanai-4",
+       "language":"Tamil",
+       "release_date":"2024-05-03",
+       "genres":["comedy","horror"],
+       "director":"sundar.c",
+       "cast":["tamannah bhatia","raashi kanna","sundar.c","santhosh prathap"],
+       "plot_summary":"A man decides to search for the hidden truth after his sister's suspicious death, setting off a series of events that lead to chaos and terror as he discovers more than he bargained for",
+       "duration":"147 mins",
+       "music_director":"hip hop tamizha",
+       "movieimg":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT09XzdDphBqW6F6bHu7q9fgSfHkqO4f3s2GQ&s"
+    },
+    {
+        "movie_id":13,
+        "title":"singapore saloon",
+        "language":"Tamil",
+        "release_date":"2024-01-25",
+        "genres":["Comedy","drama"],
+        "director":"gokul",
+        "cast":["r.j balaji","meenakshi chaudhary","sathyaraj","lal"],
+        "plot_summary":"In a village, friends Kathir and Basheer have big dreams. Inspired by Sacha, the owner of a local hairdressing salon, Kathir decides to become a hairdresser",
+        "duration":"2 hrs 14 mins",
+        "music_director":"vivek-mervin",
+        "movieimg":"https://m.media-amazon.com/images/M/MV5BYTc2YzBkZTUtZmNjNi00MTk2LThlMjktMzE5N2NhMDBiMWE5XkEyXkFqcGc@._V1_.jpg"
+    },
+    {
+        "movie_id":14,
+        "title":"j-baby",
+        "language":"Tamil",
+        "release_date":"2024-03-08",
+        "genres":["drama","Comedy"],
+        "director":"suresh mari",
+        "cast":["urvashi","attakatthi dinesh","maran"],
+        "plot_summary":"Volatile mother leaves family without notice. Sons embark on journey to find her, bringing family drama to light.",
+        "duration":"2 hrs 30 mins",
+        "music_director":"tony britto",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/a/a9/J_Baby_poster.jpg"
+    },
+    {
+        "movie_id":15,
+        "title":"hotspot",
+        "language":"Tamil",
+        "release_date":"2024-03-29",
+        "genres":["romance","Drama"],
+        "director":"vignesh karthick",
+        "cast":["kalaiarasan","sofia","sandy","janani","abhirami"],
+        "plot_summary":"A hopeful director with a secret plan, tells the story of his movie to a well-known but imperfect producer. The Director's stories reflect and question the Producer's beliefs, leaving the Producer confused by how the stories seem to connect with his own grudges.",
+        "duration":"1 hrs 55 mins",
+        "music_director":"satish raghunadhan vaan",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/4/48/Hot_Spot_%28film%29.jpg"
+    },
+    {
+        "movie_id":16,
+        "title":"romeo",
+        "language":"Tamil",
+        "release_date":"2024-04-24",
+        "genres":["romance","comedy"],
+        "director":"vinayak vaithianathan",
+        "cast":["vijay antony","mirnalini ravi"],
+        "plot_summary":"Leela, an aspiring heroine, is forced to tie the knot with Arivu, 35-year-old Malaysian return simpleton hailing from the same village. After knowing that Leela did not sign up for him or the wedding, Arivu decides to win his wife’s heart,and also confronts with his buried past.",
+        "duration":"150 mins",
+        "music_director":"barath dhanasekar",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/5/53/Romeo_Poster.png"
+    },
+    {
+        "movie_id":17,
+        "title":"star",
+        "language":"Tamil",
+        "release_date":"2024-05-10",
+        "genres":["romance","drama"],
+        "director":"elan",
+        "cast":["kavin","lal","aaditi pohankar","preity mukhundhan"],
+        "plot_summary":"Born in a lower-middle-class family, Kalai aspires to become a 'Star' in the Tamil Film Industry.",
+        "duration":"2 hrs 14 mins",
+        "music_director":"yuvan shankar raja",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/d/d4/Star_%28film%29_poster.jpg"
+    },
+    {
+       "movie_id":18,
+       "title":"pt sir",
+       "language":"Tamil",
+       "release_date":"2024-05-24",
+       "genres":["comedy","drama"],
+       "director":"karthick venugopalan",
+       "cast":["hiphop adhi","kashmira pardeshi","anikha surendran"],
+       "plot_summary":"A young teacher attempts to introduce unique physical activities to school children.",
+       "duration":"2 hrs 14 mins",
+       "music_director":"hip hop tamizha",
+       "movieimg":"https://upload.wikimedia.org/wikipedia/en/8/8f/PT_Sir.jpg"
+    },
+    {
+        "movie_id":19,
+        "title":"dear",
+        "language":"Tamil",
+        "release_date":"2024-01-14",
+        "genres":["romance","comedy"],
+        "director":"anand ravichandran",
+        "cast":["g.v prakash","aishwarya rajesh","rohini","ilavarasu"],
+        "plot_summary":"A newly married couple faces challenges when the wife's snoring interrupts the husband's sleep, and they must make compromises.",
+        "duration":"2 hrs 30 mins",
+        "music_director":"g.v prakash",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/7/7a/Dear_%282024_film%29.jpg"
+    },
+    {
+        "movie_id":20,
+        "title":"demonte colony-2",
+        "language":"Tamil",
+        "release_date":"2024-05-15",
+        "genres":["horror","drama"],
+        "director":"r.ajay gnanamuthu",
+        "cast":["arulnithi","priya bhavani shankar","archana ravichandran"],
+        "plot_summary":"A group of friends who return to a cursed location, driven by curiosity and the quest to uncover the truth behind the malevolent spirits that reside there.",
+        "duration":"144 mins",
+        "music_director":"sam c.s",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/5/5c/Demonte_Colony_2.jpg"
+    },
+    {
+        "movie_id":21,
+        "title":"lover",
+        "language":"Tamil",
+        "release_date":"2024-02-09",
+        "genres":["romance","drama"],
+        "director":"prabhuram vyas",
+        "cast":["manikandan","sri gouri priya","kanna ravi","harish kumar"],
+        "plot_summary":"Arun and Divya's six-year relationship starts unravelling as they drift apart, raising the question of whether love can withstand such differences.",
+        "duration":"2 hrs 30 mins",
+        "music_director":"sean rolden",
+        "movieimg":"https://upload.wikimedia.org/wikipedia/en/3/31/Lover_%282024_film%29.jpg"
     }
+    
 
 ]

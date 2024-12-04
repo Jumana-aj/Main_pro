@@ -1,166 +1,212 @@
-   // Import the functions you need from the SDKs you need
-   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-   import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
-   import{getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"
-   // TODO: Add SDKs for Firebase products that you want to use
-   // https://firebase.google.com/docs/web/setup#available-libraries
- 
-   // Your web app's Firebase configuration
-   const firebaseConfig = {
-     apiKey: "AIzaSyBPsH6vEnMZL0oyh9xV01ctvnR_o6rihQg",
-     authDomain: "cinecloud-auth.firebaseapp.com",
-     projectId: "cinecloud-auth",
-     storageBucket: "cinecloud-auth.appspot.com",
-     messagingSenderId: "477162218047",
-     appId: "1:477162218047:web:79efce9cf1576abd668e8a"
-   };
- 
-   // Initialize Firebase
-   const app = initializeApp(firebaseConfig);
-   if(localStorage.getItem('loggedInUserId')){
-       window.location.href="./pages/homepage.html";
-
-   }
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+} from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+const firebaseConfig = {
+    apiKey: "AIzaSyBPsH6vEnMZL0oyh9xV01ctvnR_o6rihQg",
+    authDomain: "cinecloud-auth.firebaseapp.com",
+    projectId: "cinecloud-auth",
+    storageBucket: "cinecloud-auth.appspot.com",
+    messagingSenderId: "477162218047",
+    appId: "1:477162218047:web:79efce9cf1576abd668e8a"
+  };
 
 
- function showMessage(message, divId){
-    var messageDiv=document.getElementById(divId);
-    messageDiv.style.display="block";
-    messageDiv.innerHTML=message;
-    messageDiv.style.opacity=1;
-    setTimeout(function(){
-        messageDiv.style.opacity=0;
-    },5000);
- }
- const signUp=document.getElementById('submitSignUp');
- signUp.addEventListener('click', (event)=>{
-    event.preventDefault();
-    const email=document.getElementById('rEmail').value;
-    const password=document.getElementById('rPassword').value;
-    const firstName=document.getElementById('fName').value;
-    const lastName=document.getElementById('lName').value;
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-// Validate First Name (only alphabetic characters, minimum 3 characters)
-if (firstName.length < 6 ||  !/^[A-Z][a-zA-Z]*$/.test(firstName)) {
-  showMessage('First Name must be at least 6 characters long and contain only letters.', 'signUpMessage');
-  return;
+
+// Toggle between sign-up and sign-in forms
+const signUpButton = document.getElementById('signUpButton');
+const signInButton = document.getElementById('signInButton');
+const signInForm = document.getElementById('signIn');
+const signUpForm = document.getElementById('signup');
+
+signUpButton.addEventListener('click', function() {
+    signInForm.style.display = "none";
+    signUpForm.style.display = "block";
+});
+
+signInButton.addEventListener('click', function() {
+    signUpForm.style.display = "none";
+    signInForm.style.display = "block";
+});
+
+// Toggle password visibility for sign-up form
+const toggleSignUpPassword = document.getElementById('toggleSignUpPassword');
+const toggleSignInPassword = document.getElementById('toggleSignInPassword');
+
+toggleSignUpPassword.addEventListener('click', function() {
+    const passwordField = document.getElementById('rPassword');
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+});
+
+toggleSignInPassword.addEventListener('click', function() {
+    const passwordField = document.getElementById('signInPassword');
+    const type = passwordField.type === 'password' ? 'text' : 'password';
+    passwordField.type = type;
+});
+
+// Show general error message
+function showMessage(message, divId) {
+  const messageDiv = document.getElementById(divId);
+  messageDiv.style.display = "block";
+  messageDiv.innerHTML = message;
+  messageDiv.style.opacity = 1;
+  setTimeout(() => {
+    messageDiv.style.opacity = 0;
+  }, 5000);
 }
 
+// Show field-specific error
+function showError(message, fieldId, errorId) {
+    const errorDiv = document.getElementById(errorId);
+    errorDiv.style.display = "block";
+    errorDiv.innerHTML = message;
+    const field = document.getElementById(fieldId);
+    field.classList.add('error'); // Optional: Add red border or styling for error
+}
 
-  // Validate Last Name (only alphabetic characters, minimum 3 characters)
-  if (lastName.length < 6 ||  !/^[A-Z][a-zA-Z]*$/.test(lastName)) {
-    showMessage('Last Name must be at least 6 characters long and contain only letters.', 'signUpMessage');
-    return;
-  }
+// Hide specific error
+function hideError(errorId) {
+    const errorDiv = document.getElementById(errorId);
+    errorDiv.style.display = "none";
+}
 
-  // Validate Email (contains '@')
-  if (!email.includes('@')) {
-    showMessage('Please enter a valid email address.', 'signUpMessage');
-    return;
-  }
+// Sign Up Logic
+const signUp = document.getElementById('submitSignUp');
+signUp.addEventListener('click', (event) => {
+    event.preventDefault();
 
-  // Validate Password (at least 8 characters, must contain a number, symbol, and uppercase letter)
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  if (!passwordRegex.test(password)) {
-    showMessage('Password must be at least 8 characters long and contain uppercase, lowercase, a number, and a special symbol.', 'signUpMessage');
-    return;
-  }
+    // Clear previous errors
+    hideError('fNameError');
+    hideError('lNameError');
+    hideError('rEmailError');
+    hideError('rPasswordError');
+    hideError('ageError');
+    hideError('genderError');
 
-  // Check for weak passwords (e.g., "1234567890")
-  if (/^\d{10}$/.test(password)) {
-    showMessage('Password is too weak. Please choose a stronger password.', 'signUpMessage');
-    return;
-  }
-    const auth=getAuth();
-    const db=getFirestore();
+    const email = document.getElementById('rEmail').value;
+    const password = document.getElementById('rPassword').value;
+    const firstName = document.getElementById('fName').value;
+    const lastName = document.getElementById('lName').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
 
-    createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential)=>{
-        const user=userCredential.user;
-        const userData={
-            email: email,
-            firstName: firstName,
-            lastName:lastName
-        };
-        showMessage('Account Created Successfully', 'signUpMessage');
-        const docRef=doc(db, "users", user.uid);
-        setDoc(docRef,userData)
-        .then(()=>{
-            window.location.href='index.html';
+    let formValid = true;
+
+    // Validate First Name (only alphabetic characters, minimum 3 characters)
+    if (!/^[A-Za-z]{3,}$/.test(firstName)) {
+        showError('First Name must be at least 3 characters long and contain only letters.', 'fName', 'fNameError');
+        formValid = false;
+    }
+
+    // Validate Last Name (only alphabetic characters, minimum 3 characters)
+    if (!/^[A-Za-z]{3,}$/.test(lastName)) {
+        showError('Last Name must be at least 3 characters long and contain only letters.', 'lName', 'lNameError');
+        formValid = false;
+    }
+
+    // Validate Email (contains '@')
+    if (!email.includes('@')) {
+        showError('Please enter a valid email address.', 'rEmail', 'rEmailError');
+        formValid = false;
+    }
+
+    // Validate Password (at least 8 characters, must contain a number and a letter)
+    const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
+    if (!passwordRegex.test(password)) {
+        showError('Password must be at least 8 characters long and include at least one letter and one number.', 'rPassword', 'rPasswordError');
+        formValid = false;
+    }
+
+    // Validate Age (between 5 and 100)
+    if (age < 5 || age > 100) {
+        showError('Please enter a valid age (between 5 and 100).', 'age', 'ageError');
+        formValid = false;
+    }
+
+    // Validate Gender
+    if (!gender) {
+        showError('Please select a gender.', 'gender', 'genderError');
+        formValid = false;
+    }
+
+    // If form is valid, proceed with Firebase Auth and Firestore registration
+    if (formValid) {
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            const userData = {
+                email: email,
+                firstName: firstName,
+                lastName: lastName,
+                age: age,
+                gender: gender
+            };
+
+            // Save user data in Firestore
+            const docRef = doc(db, "users", user.uid);
+            setDoc(docRef, userData)
+                .then(() => {
+                    showMessage("Registration successful!", 'signUpMessage');
+                    // Redirect to homepage after successful sign-up
+                    window.location.href ='../pages/homepage.html'; // Replace with your homepage URL
+                })
+                .catch((error) => {
+                    showMessage(`Error saving user data: ${error.message}`, 'signUpMessage');
+                });
         })
-        .catch((error)=>{
-            console.error("error writing document", error);
-
+        .catch((error) => {
+            showMessage(`Registration failed: ${error.message}`, 'signUpMessage');
         });
-    })
-    .catch((error)=>{
-        const errorCode=error.code;
-        if(errorCode=='auth/email-already-in-use'){
-            showMessage('Email Address Already Exists !!!', 'signUpMessage');
-        }
-        else{
-            showMessage('unable to create User', 'signUpMessage');
-        }
-    })
- });
-// Show/Hide Password with Eye Icon
-// const passwordInput = document.getElementById('rPassword');
-// const eyeIcon = document.getElementById('eye-icon');
+    }
+});
 
-// eyeIcon.addEventListener('click', () => {
-//   if (passwordInput.type === 'password') {
-//     passwordInput.type = 'text';
-//     eyeIcon.classList.remove('fa-eye');
-//     eyeIcon.classList.add('fa-eye-slash');
-//   } else {
-//     passwordInput.type = 'password';
-//     eyeIcon.classList.remove('fa-eye-slash');
-//     eyeIcon.classList.add('fa-eye');
-//   }
-// });
-
-
-
-
-
-
-// Validate password length
-function validateForm() {
-  const password = document.getElementById('password').value;
-  
-  // Check if password is at least 6 characters long
-  if (password.length < 6) {
-      document.getElementById('passwordError').style.display = 'block';
-      return false;
-  }
-
-  document.getElementById('passwordError').style.display = 'none';
-  return true; // Allow form submission
-}
-
-
- const signIn=document.getElementById('submitSignIn');
- signIn.addEventListener('click', (event)=>{
+// Sign In Logic
+const signIn = document.getElementById('submitSignIn');
+signIn.addEventListener('click', (event) => {
     event.preventDefault();
-    const email=document.getElementById('email').value;
-    const password=document.getElementById('password').value;
-    const auth=getAuth();
 
-    signInWithEmailAndPassword(auth, email,password)
-    .then((userCredential)=>{
-        showMessage('login is successful', 'signInMessage');
-        const user=userCredential.user;
-        localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='../pages/homepage.html';
-    })
-    .catch((error)=>{
-        const errorCode=error.code;
-        if(errorCode==='auth/invalid-credential'){
-            showMessage('Incorrect Email or Password', 'signInMessage');
-        }
-        else{
-            showMessage('Account does not Exist', 'signInMessage');
-        }
-    })
- })
- 
+    // Clear previous errors
+    hideError('signInEmailError');
+    hideError('signInPasswordError');
+
+    const signInEmail = document.getElementById('signInEmail').value;
+    const signInPassword = document.getElementById('signInPassword').value;
+
+    let formValid = true;
+
+    // Validate Sign In Email
+    if (!signInEmail.includes('@')) {
+        showError('Please enter a valid email address.', 'signInEmail', 'signInEmailError');
+        formValid = false;
+    }
+
+    // Validate Sign In Password
+    if (signInPassword.length < 8) {
+        showError('Password must be at least 8 characters long.', 'signInPassword', 'signInPasswordError');
+        formValid = false;
+    }
+
+    // If valid, proceed to authentication
+    if (formValid) {
+        signInWithEmailAndPassword(auth, signInEmail, signInPassword)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            showMessage('Login successful!', 'signInMessage');
+            // Redirect after login (example)
+            window.location.href = '../pages/homepage.html'; // Adjust to your login redirect page
+        })
+        .catch((error) => {
+            showMessage(`Login failed: ${error.message}`, 'signInMessage');
+        });
+    }
+});

@@ -1,4 +1,4 @@
-*{
+ *{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -9,10 +9,11 @@ body{
     background:linear-gradient(to right,#e2e2e2,#c9d6ff);
     background-image: url(../assets/bg.jpg);
     
+    
 }
 
 .container{
-    background:#fff;
+    background:#dbecf4;
     width:450px;
     padding:1.5rem;
     margin:50px auto;
@@ -36,23 +37,30 @@ input{
     width:100%;
     background-color:transparent;
     border:none;
-    border-bottom:1px solid #757575;
+    border-bottom:1px solid #120c03;
     padding-left:1.5rem;
     font-size:15px;
+}
+#gender{
+    margin-left: 10%;
+    margin-top: 20px;
+    
 }
 .input-group{
     padding:1% 0;
     position:relative;
+    padding-bottom: 20px;
 
 }
 .input-group i{
     position:absolute;
-    color:black;
+    color:#395886;
+    
 }
 input:focus{
     background-color: transparent;
     outline:transparent;
-    border-bottom:2px solid hsl(327,90%,28%);
+    border-bottom:2px solid hsl(234, 90%, 28%);
 }
 input::placeholder{
     color:transparent;
@@ -67,7 +75,7 @@ label{
 }
 input:focus~label,input:not(:placeholder-shown)~label{
     top:-3em;
-    color:hsl(327,90%,28%);
+    color:hsl(238, 28%, 55%);
     font-size:15px;
 }
 .recover{
@@ -81,7 +89,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     color:rgb(125,125,235);
 }
 .recover a:hover{
-    color:blue;
+    color:rgb(87, 87, 178);
     text-decoration:underline;
 }
 button{
@@ -91,13 +99,13 @@ button{
     outline:none;
     border:none;
     width:100%;
-    background:rgb(125,125,235);
+    background:#395886;
     color:white;
     cursor:pointer;
     transition:0.9s;
 }
 button:hover{
-    background:#07001f;
+    background:#395886;
 }
 .or{
     font-size:1.1rem;
@@ -108,7 +116,7 @@ button:hover{
     text-align:center;
 }
 .icons i{
-    color:rgb(125,125,235);
+    color:#2f70d1;
     padding:0.8rem 1.5rem;
     border-radius:10px;
     font-size:1.5rem;
@@ -120,7 +128,7 @@ button:hover{
 .icons i:hover{
     background:#07001f;
     font-size:1.6rem;
-    border:2px solid rgb(125,125,235);
+    border:2px solid rgb(63, 63, 212);
 }
 .links{
     display:flex;
@@ -130,7 +138,7 @@ button:hover{
     font-weight:bold;
 }
  #signUpButton, #signInButton{
-    color:rgb(125,125,235);
+    color:#395886;
     border:none;
     background-color:transparent;
     font-size:1rem;
@@ -138,7 +146,7 @@ button:hover{
 }
 #signUpButton:hover, #signInButton:hover {
     text-decoration:underline;
-    color:blue;
+    color:#395886;
 } 
 .messageDiv{
     background-color:hsl(327,90%,28%);
@@ -151,62 +159,67 @@ button:hover{
     animation:fadeOut 7s forwards;
 
 }
-
+.error-message{
+    color: red;
+}
 .eye-icon {
     position: absolute;
-    right: 15px;
-    top: 5%;
+    right: 150px;
+    top: 100%;
     cursor: pointer;
-}
+} 
 
-
-
-
-
-
-
+/* General Reset and Body Styles */
 
 
 
 @media (max-width: 600px) {
     nav {
         font-size: 40px; /* Adjust nav size */
-    }
-
-    .full-cont{
+ } 
+ .full-cont{
         margin-top: 50%;
     }
 
-    .container {
+    .container{
         width: 90%; /* Full width on small screens */
-        padding: 1rem; /* Reduced padding */
-        margin: 20px auto; /* Adjust margin */
-        top: 0; /* Reset top positioning */
-        display: flex;
-        flex-direction: column;
-    }
+       padding: 1rem; /* Reduced padding */
+       margin: 20px auto;
+       /* Adjust:margin; */
+       top: 0; 
+       /* Reset :top ; */
+      display: flex;
+      flex-direction: column; 
+ } 
 
-    form {
-        margin: 0; /* Remove margin */
-    }
-
-    .form-title {
-        font-size: 1.3rem; /* Smaller title on mobile */
-    }
-
-    input {
-        font-size: 14px; /* Smaller input font size */
-    }
-
-    button {
-        font-size: 1rem; /* Smaller button font size */
-    }
-
-    .or {
-        font-size: 1rem; /* Smaller text for "or" */
-    }
-
-    .links {
-        padding: 0 1rem; /* Adjust padding */
-    }
+form {
+    margin: 0;
+    /* Remove margin */
 }
+
+.form-title {
+    font-size: 1.3rem;
+    /* Smaller title on mobile */
+}
+
+input {
+    font-size: 14px;
+    /* Smaller input font size */
+}
+
+button {
+    font-size: 1rem;
+    /* Smaller button font size */
+}
+
+.or {
+    font-size: 1rem;
+    /* Smaller text for "or" */
+}
+
+.links {
+    padding: 0 1rem;
+    /* Adjust padding */
+}
+
+ } 

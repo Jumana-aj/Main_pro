@@ -1,99 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register & Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script type="module" src="./script/firebaseauth.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register & Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="/script/firebaseauth.js" defer></script>
 </head>
+
 <body>
- 
+
   <div class="full-cont">
 
-    <div class="container" id="signup" style="display:none;">
+    <!-- Sign Up Form -->
+    <div class="container" id="signup" style="display:block;">
       <h1 class="form-title">Register</h1>
-      <form method="post" action="">
+      <form method="post" action="" novalidate>
         <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+
+        <!-- First Name -->
         <div class="input-group">
-           <i class="fas fa-user"></i>
-           <input type="text"  id="fName" placeholder="First Name" required>
-           <label for="fname">First Name</label>
+          <i class="fas fa-user"></i>
+          <input type="text" id="fName" placeholder="First Name" required>
+          <label for="fName">First Name</label>
+          <div id="fNameError" class="error-message" style="display:none;"></div>
         </div>
+
+        <!-- Last Name -->
         <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text"  id="lName" placeholder="Last Name" required>
-            <label for="lName">Last Name</label>
+          <i class="fas fa-user"></i>
+          <input type="text" id="lName" placeholder="Last Name" required>
+          <label for="lName">Last Name</label>
+          <div id="lNameError" class="error-message" style="display:none;"></div>
         </div>
+
+        <!-- Email -->
         <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email"  id="rEmail" placeholder="Email" required>
-            <label for="rEmail">Email</label>
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="rEmail" placeholder="Email" required>
+          <label for="rEmail">Email</label>
+          <div id="rEmailError" class="error-message" style="display:none;"></div>
         </div>
+
+        <!-- Password -->
         <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="rPassword"  placeholder="Password" required>
-            <label for="rPassword">Password</label>
-            
+          <i class="fas fa-lock"></i>
+          <input type="password" id="rPassword" placeholder="Password" required>
+          <label for="rPassword">Password</label>
+          <i class="fas fa-eye" id="toggleSignUpPassword" style="position: absolute; right: 10px; top: 20%; transform: translateY(-50%); cursor: pointer;"></i>
+          <div id="rPasswordError" class="error-message" style="display:none;"></div>
         </div>
+
+        <!-- Age -->
         <div class="input-group">
           <i class="fas fa-calendar-alt"></i>
           <input type="number" id="age" placeholder="Age" min="5" max="100" required>
           <label for="age">Age</label>
-      </div>
-      <br>
-      <div class="input-group">
+          <div id="ageError" class="error-message" style="display:none;"></div>
+        </div>
+
+        <!-- Gender -->
+        <div class="input-group">
           <label for="gender">Gender</label>
           <select id="gender" required>
-              <option value="" disabled selected>Select Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
-              <option value="prefer_not_to_say">Prefer Not to Say</option>
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+            <option value="prefer_not_to_say">Prefer Not to Say</option>
           </select>
-      </div>
-      <br>
-       <button class="btn" id="submitSignUp" >Sign Up</button>
+          <div id="genderError" class="error-message" style="display:none;"></div>
+        </div>
+
+        <br>
+        <button class="btn" id="submitSignUp">Sign Up</button>
       </form>
       <p class="or">
-      
-      
-      <div class="links">
-        
-        <!-- <button id="signInButton">Sign In</button> -->
-      </div>
-    </div>
-
-  <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
-        <form method="post" action="">
-          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
-
-          <div class="input-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email"  id="email" placeholder="Email" required>
-              <label for="email">Email</label>
-          </div>
-          <div class="input-group">
-              <i class="fas fa-lock"></i>
-            <input type="password" id="password"  placeholder="Password" required>
-              <label for="password">Password</label>
-          </div>
-          
-         <button  class="btn"  id="submitSignIn">Sign In</button>
-        </form>
-        <p class="or">
-       
-        </p>
-       
         <div class="links">
-       
-          <button id="signUpButton">Sign Up</button>
+          <button id="signInButton">Sign In</button>
         </div>
-      </div>
+      </p>
     </div>
-      <script src="./script/script.js"></script>
+
+    <!-- Sign In Form -->
+    <div class="container" id="signIn" style="display:none;">
+      <h1 class="form-title">Login</h1>
+      <form method="post" action="" novalidate>
+        <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+        <!-- Email -->
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="signInEmail" placeholder="Email" required>
+          <label for="signInEmail">Email</label>
+          <div id="signInEmailError" class="error-message" style="display:none;"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="signInPassword" placeholder="Password" required>
+          <label for="signInPassword">Password</label>
+          <i class="fas fa-eye" id="toggleSignInPassword" style="position: absolute; right: 10px; top: 20%; transform: translateY(-50%); cursor: pointer;"></i>
+          <div id="signInPasswordError" class="error-message" style="display:none;"></div>
+        </div>
+
+        <br>
+        <button class="btn" id="submitSignIn">Sign In</button>
+      </form>
+      <p class="or">
+        <div class="links">
+          <button id="signUpButton">Don't have an account? Sign Up</button>
+        </div>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="/script/script.js"></script>
 </body>
+
 </html>
