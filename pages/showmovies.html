@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="../css/showmovie.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logoandname">CineCloud</div>
+            <div class="navbar">
+                <div class="nav-item"><a href="./homepage.html">Home</a></div>
+                <div class="nav-item"><a href="./search.html">Search</a></div>
+                <div class="nav-item"><a href="#">MySpace</a></div>
+            </div>
+        </div>
+        
+        <div class="movie-details">
+            <div class="movie-poster">
+                <img id="movie-poster" src="" alt="Movie Poster">
+            </div>
+            <div class="movie-info">
+                <h1 id="movie-title"></h1>
+                <p><strong>Duration: <span id="movie-duration"></span></strong></p>
+                <p><strong>Release Date: <span id="movie-release-date"></span></strong></p>
+                <p><strong>Genre: <span id="movie-genre"></span></strong></p>
+                <p><strong>Language: <span id="movie-language"></span></strong></p>
+                <p><strong>Plot Summary:<span id="movie-plot"></span></strong> </p>
+            </div>
+        </div>
+        <button id="play-button">Play</button>
+    </div>
+
+    <script type="module" src="../script/showmovie.js"></script>
+</body>
+
+</html>

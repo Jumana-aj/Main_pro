@@ -4,59 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Firebase JSON Upload</title>
-  <!-- <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
 </head>
 <body>
   <h1>Upload JSON to Firebase</h1>
-
-
-  <button id="loadMoviesButton">Load Movies</button>
-
-<!-- 
-
-  <script src="./database.js" type="module">
-      document.getElementById('loadMoviesButton').addEventListener('click', loadJsonAndPushToFirestore);
-  </script> -->
-
- 
-    // Import Firebase SDKs for version 9 (modular syntax)
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-    // Firebase configuration
-    const firebaseConfig = {
-  apiKey: "AIzaSyBPsH6vEnMZL0oyh9xV01ctvnR_o6rihQg",
-  authDomain: "cinecloud-auth.firebaseapp.com",
-  projectId: "cinecloud-auth",
-  storageBucket: "cinecloud-auth.appspot.com",
-  messagingSenderId: "477162218047",
-  appId: "1:477162218047:web:79efce9cf1576abd668e8a"
-};
-    // Initialize Firebase and Firestore
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    // Load JSON and Upload
-    async function loadJsonData() {
-      try {
-        const response = await fetch('./data.json');
-        const data = await response.json();
-        await uploadToFirestore(data);
-      } catch (error) {
-        console.error('Error loading JSON:', error);
-      }
-    }
-    async function uploadToFirestore(data) {
-      const collectionRef = collection(db, 'movieCollections');  // Replace 'placeholder' with your collection name
-      for (const item of data){
-        try {
-          await addDoc(collectionRef, item);
-          console.log('Document added:', item);
-        } catch (error) {
-          console.error('Error adding document:', error);
-        }
-      }
-    }
-    loadJsonData();
-  </script> -->
+  <script type="module" src="./database.js">
+    
+  </script>
 </body>
 </html>

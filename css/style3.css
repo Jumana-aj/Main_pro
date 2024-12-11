@@ -1,0 +1,106 @@
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body, html {
+        width: 100%;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        background-color:#e7e9eb;
+    }
+ 
+    /* .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:rgb(86, 86, 241);
+        color: white;
+        padding: 20px;
+        font-size: 30px;
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: right;
+        font-size: 20px;
+        color: black;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .navbar a {
+        color: rgb(229, 229, 240);
+        text-decoration: none;
+        padding: 10px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    } */
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #5656F1;
+        color: white;
+        padding: 20px;
+        font-size: 30px;
+    }
+    
+    .logoandname {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: larger;
+        font-weight: bold;
+        color: #fff;
+    }
+    
+    /* Navbar Styling */
+    .navbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: 18px;
+    }
+    
+    .navbar a {
+        color: rgb(229, 229, 240);
+        text-decoration: none;
+        padding: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        transition: color 0.3s;
+    }
+    
+    .navbar a:hover {
+        color: #FFD700;
+    }
+    
+    .nav-item {
+        cursor: pointer;
+    }
+   
+    
+
+.Searchcontainer {
+   text-align: center;
+   font-size: 40px;
+   font-family: 'Times New Roman', Times, serif;
+   padding-top: 80px;
+   
+}
+.inputbox{
+   display: flex;
+   align-items: center;
+margin-top: 75px;
+margin-left: 22%;
+padding: 20px;
+height: 30px;
+width: 60%;
+  
+}
+
+
