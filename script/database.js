@@ -37,5 +37,5 @@ async function uploadToFirestore(data) {
     }
   }
 }
-//loadJsonData();
+// loadJsonData();
 

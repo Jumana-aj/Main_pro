@@ -20,7 +20,7 @@
             </div>
         </div>
         
-        <div class="movie-details">
+        <div class="movie-details" id="movie-details">
             <div class="movie-poster">
                 <img id="movie-poster" src="" alt="Movie Poster">
             </div>
@@ -31,10 +31,13 @@
                 <p><strong>Genre: <span id="movie-genre"></span></strong></p>
                 <p><strong>Language: <span id="movie-language"></span></strong></p>
                 <p><strong>Plot Summary:<span id="movie-plot"></span></strong> </p>
+                <button id="play-button">Play</button>
             </div>
+            
         </div>
-        <button id="play-button">Play</button>
+       
     </div>
+    <video id="video-link" controls></video>
 
     <script type="module" src="../script/showmovie.js"></script>
 </body>

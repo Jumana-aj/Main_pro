@@ -20,7 +20,14 @@ const movieDetails = JSON.parse(localStorage.getItem("movie-details"));
 console.log(movieDetails.title);
 
 
+const moviedetails=document.getElementById("movie-details")
+const playbutton=document.getElementById("play-button")
+const videolink=document.getElementById("video-link")
 
+playbutton.addEventListener("click",()=>{
+    moviedetails.style.display="none";
+    videolink.style.display="block";
+});
 
 // Fetch and display movie details
 async function fetchMovieDetails() {
@@ -32,8 +39,12 @@ async function fetchMovieDetails() {
             document.getElementById("movie-genre").textContent = movieDetails.genres;
             document.getElementById("movie-language").textContent = movieDetails.language;
             document.getElementById("movie-plot").textContent = movieDetails.plot_summary;
+            document.getElementById("video-link").src=movieDetails.video_link;
 
 }
+
+
+
 
 // Load movie details on page load
 fetchMovieDetails();

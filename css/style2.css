@@ -346,12 +346,12 @@ body, html {
     width: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #F5F7FA;
+    background-color: #0a0909;
 }
 
 .container {
     width: 100vw;
-    background-color: white;
+    background-color: rgb(20, 18, 18);
 }
 
 /* Header Styling */
@@ -359,7 +359,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5656F1;
+    background-color: #2F3C7E;
     color: white;
     padding: 20px;
     font-size: 30px;

@@ -1,0 +1,128 @@
+ /* body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+    */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+    background-color: #121314;
+}
+
+.container {
+    width: 100vw;
+    background-color: black;
+}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2F3C7E;
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.logoandname {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: rgb(229, 229, 240);
+    text-decoration: none;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #3f48c4;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+  /* Reset some default browser styles */
+
+  
+  /* Profile container styles */
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* For responsiveness */
+    max-width: 500px; /* Prevent too large on wide screens */
+    height: 80%;
+    position: relative;
+    left: 35%;
+    margin-top: 12%;
+     /* Adjust height to fill most of the page */
+  }
+  
+  /* Profile picture styles */
+  .profile-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* object-fit: cover; */
+    margin-bottom: 20px;
+  }
+  
+  /* Name styles */
+  h1 {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+  
+  /* About text styles */
+  p {
+    color: #1a1616;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 20px 20px;
+  }
+  
+  /* Button styles */
+  .edit-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  

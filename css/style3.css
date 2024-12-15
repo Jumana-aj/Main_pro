@@ -9,7 +9,7 @@
         width: 100%;
         font-family: Arial, sans-serif;
         overflow-x: hidden;
-        background-color:#e7e9eb;
+        background-color:black;
     }
  
     /* .header {
@@ -46,7 +46,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #5656F1;
+        background-color: #2F3C7E;
         color: white;
         padding: 20px;
         font-size: 30px;
@@ -90,6 +90,7 @@
    font-size: 40px;
    font-family: 'Times New Roman', Times, serif;
    padding-top: 80px;
+   color: #fff;
    
 }
 .inputbox{

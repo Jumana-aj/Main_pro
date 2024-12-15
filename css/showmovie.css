@@ -8,18 +8,18 @@ body, html {
     width: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #F5F7FA;
+    background-color: #121314;
 }
 
 .container {
     width: 100vw;
-    background-color: white;
+    background-color:black;
 }
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #5656F1;
+    background-color:#2F3C7E;
     color: white;
     padding: 20px;
     font-size: 30px;
@@ -57,14 +57,17 @@ body, html {
 }
 
 .movie-details {
+    display: block;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px;
+    color: white;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #06060b;
 }
 
 .movie-poster img {
@@ -72,6 +75,8 @@ body, html {
     height: 450px;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin-top: 50px;
+    /* margin-right: 600px; */
 }
 
 .movie-info {
@@ -81,8 +86,8 @@ body, html {
 }
 
 #play-button {
-    margin-bottom: 20px;
-    margin-left: 48%;
+    margin-top: 35px;
+    margin-left: 2%;
     padding: 10px 20px;
     
     font-size: 1.2em;
@@ -103,7 +108,7 @@ body, html {
 }
 
 
-#movie-duration{
-    color: #06060b;
-    
+#video-link{
+    display: none;
+    width: 100%;
 }
