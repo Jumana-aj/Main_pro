@@ -9,7 +9,7 @@
         width: 100%;
         font-family: Arial, sans-serif;
         overflow-x: hidden;
-        background-color:black;
+        background-color:#0a0909;
     }
  
     /* .header {
@@ -76,7 +76,7 @@
     }
     
     .navbar a:hover {
-        color: #FFD700;
+        color: #3f48c4;
     }
     
     .nav-item {

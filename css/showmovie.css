@@ -8,7 +8,8 @@ body, html {
     width: 100%;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
-    background-color: #121314;
+    overflow-y: hidden;
+    background-color: #0a0909;
 }
 
 .container {
@@ -58,7 +59,8 @@ body, html {
 
 .movie-details {
     display: block;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
     flex-direction: column;
     align-items: center;
     margin: 20px;
@@ -68,11 +70,12 @@ body, html {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #06060b;
+    
 }
 
 .movie-poster img {
     width: 700px;
-    height: 450px;
+    height: 620px;
     border-radius: 8px;
     margin-bottom: 20px;
     margin-top: 50px;
