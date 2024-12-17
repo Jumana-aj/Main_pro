@@ -8,25 +8,23 @@
 </head>
 <body>
     <div class="scontainer">
-   
         <div class="header">
             <div class="logoandname">Cinecloud</div>
-
-       
-
-        <!-- Navigation bar -->
-        <div class="navbar">
-            <div class="nav-item"><a href="./homepage.html">Home</a></div>
-            <div class="nav-item"><a href="./search.html">Search</a></div>
-            <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+            <div class="navbar">
+                <div class="nav-item"><a href="./homepage.html">Home</a></div>
+                <div class="nav-item"><a href="./search.html">Search</a></div>
+                <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+            </div>
         </div>
-      </div>
     </div>
 
-   
-    
     <div class="Searchcontainer">Search</div>
-    <input type="name" class="inputbox">
+    <div style="position: relative;">
+        <input type="text" class="inputbox" id="searchInput" placeholder="Search for a movie...">
+        <div class="suggestions" id="suggestionsBox" style="display: none;"></div>
     </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="../script/search.js"></script>
 </body>
 </html>

@@ -212,23 +212,3 @@ signIn.addEventListener('click', (event) => {
 });
 
 
-// Script for Sign-Up
-document.getElementById('submitSignUp').addEventListener('click', function (event) {
-    event.preventDefault(); // Prevent form submission
-  
-    // Retrieve First Name
-    const firstName = document.getElementById('fName').value;
-  
-    // Validate First Name
-    if (!firstName) {
-      alert("Please enter your first name.");
-      return;
-    }
-  
-    // Save First Name to localStorage
-    localStorage.setItem('profileName', firstName);
-  
-    // Redirect to Profile Page
-    window.location.href = '../pages/profile.html';
-  });
-  
