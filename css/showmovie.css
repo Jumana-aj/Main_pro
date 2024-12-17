@@ -83,8 +83,9 @@ body, html {
 }
 
 .movie-info {
-    text-align:center;
+    text-align:start;
     padding:10px;
+    margin-left: 30%;
     
 }
 
