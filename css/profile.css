@@ -125,4 +125,20 @@ body, html {
   .edit-button:hover {
     background-color: #0056b3;
   }
-  
+  #logout {
+    position: relative;
+    top: 20px;
+    
+    padding: 10px 20px;
+    background-color: #5656F1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#logout:hover {
+    background-color: #4444d1;
+}
