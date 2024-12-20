@@ -14,27 +14,36 @@
         <div class="header">
             <div class="logoandname">CineCloud</div>
             <div class="navbar">
+                <div class="nav-item search">
+                    <input type="text" class="inputbox" id="searchInput" placeholder="Search for a movie...">
+                    <div class="suggestions" id="suggestionsBox" style="display: none;"></div>
+                  
+                  </div>
                 <div class="nav-item"><a href="./homepage.html">Home</a></div>
-                <div class="nav-item"><a href="./search.html">Search</a></div>
-                <div class="nav-item"><a href="#">MySpace</a></div>
+                
+                <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+            </div>
+        </div>
+
+        <div class="detail-container">
+            <div class="movie-details" id="movie-details">
+                <div class="movie-poster">
+                    <img id="movie-poster" src="" alt="Movie Poster">
+                </div>
+                <div class="movie-info">
+                    <h1 id="movie-title"></h1>
+                    <p><strong>Duration: <span id="movie-duration"></span></strong></p>
+                    <p><strong>Release Date: <span id="movie-release-date"></span></strong></p>
+                    <p><strong>Genre: <span id="movie-genre"></span></strong></p>
+                    <p><strong>Language: <span id="movie-language"></span></strong></p>
+                    <p><strong>Plot Summary:<span id="movie-plot"></span></strong> </p>
+                    <button id="play-button">Play</button>
+                </div>
+                
             </div>
         </div>
         
-        <div class="movie-details" id="movie-details">
-            <div class="movie-poster">
-                <img id="movie-poster" src="" alt="Movie Poster">
-            </div>
-            <div class="movie-info">
-                <h1 id="movie-title"></h1>
-                <p><strong>Duration: <span id="movie-duration"></span></strong></p>
-                <p><strong>Release Date: <span id="movie-release-date"></span></strong></p>
-                <p><strong>Genre: <span id="movie-genre"></span></strong></p>
-                <p><strong>Language: <span id="movie-language"></span></strong></p>
-                <p><strong>Plot Summary:<span id="movie-plot"></span></strong> </p>
-                <button id="play-button">Play</button>
-            </div>
-            
-        </div>
+       
        
     </div>
     <video id="video-link" controls></video>

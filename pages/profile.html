@@ -7,30 +7,42 @@
   <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
-
-
-
-    <div class="header">
-        <div class="logoandname">Cinecloud</div>
+  <div class="header">
+    <div class="logoandname">Cinecloud</div>
 
     <!-- Navigation bar -->
     <div class="navbar">
-        <div class="nav-item"><a href="./homepage.html">Home</a></div>
-        <div class="nav-item"><a href="./search.html">Search</a></div>
-        <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+      <div class="nav-item search">
+        <input type="text" class="inputbox" id="searchInput" placeholder="Search for a movie...">
+        <div class="suggestions" id="suggestionsBox" style="display: none;"></div>
+      </div>
+      <div class="nav-item"><a href="./homepage.html">Home</a></div>
+      <div class="nav-item"><a href="./profile.html">MySpace</a></div>
     </div>
   </div>
+
   <div class="profile-container">
-    <div class="profile-pic">
-      <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImage">
+    <div class="card">
+      <div class="profile-header">
+        <div class="profile-pic">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImage">
+        </div>
+        <h1 id="profileName">Anonymous</h1>
+        <p id="profileAbout">No information provided.</p>
+      </div>
+      <div class="profile-actions">
+        <!-- Hidden file input for profile picture upload -->
+        <input type="file" id="fileInput" style="display: none;" accept="image/*">
+
+        <!-- Buttons for editing and uploading profile -->
+        <button id="editProfile">Edit Profile</button>
+        <button id="saveProfile" style="display: none;">Save</button>
+        
+        <button id="logoutButton">Logout</button>
+      </div>
     </div>
-    <h1 id="profileName">Jumana</h1>
-    <p id="profileAbout">Movie enthusiast. Loves binge-watching and discovering new content.</p>
-    <button onclick="editProfile()" class="edit-button">Edit Profile</button>
-    <button id="logout">Logout</button>
   </div>
 
   <script src="../script/profile.js" type="module"></script>
-
 </body>
 </html>
