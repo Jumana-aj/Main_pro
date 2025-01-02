@@ -166,4 +166,4 @@ searchBox.addEventListener("input", () => {
 // Initialize functions
 fetchAndDisplayData();
 // Uncomment the following line to load data from JSON file
-loadJsonData();
+// loadJsonData();

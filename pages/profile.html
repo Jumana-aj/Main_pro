@@ -7,42 +7,51 @@
   <link rel="stylesheet" href="../css/profile.css">
 </head>
 <body>
-  <div class="header">
-    <div class="logoandname">Cinecloud</div>
+  <div class="profile-page">
+    <div class="header">
+      <div class="logoandname">Cinecloud</div>
 
-    <!-- Navigation bar -->
-    <div class="navbar">
-      <div class="nav-item search">
-        <input type="text" class="inputbox" id="searchInput" placeholder="Search for a movie...">
-        <div class="suggestions" id="suggestionsBox" style="display: none;"></div>
+      <!-- Navigation bar -->
+      <div class="navbar">
+        <div class="nav-item"><a href="./homepage.html">Home</a></div>
+        <div class="nav-item"><a href="../pages/profile.html">MySpace</a></div>
       </div>
-      <div class="nav-item"><a href="./homepage.html">Home</a></div>
-      <div class="nav-item"><a href="./profile.html">MySpace</a></div>
     </div>
-  </div>
 
-  <div class="profile-container">
-    <div class="card">
-      <div class="profile-header">
-        <div class="profile-pic">
+    <main class="profile-container">
+      <div class="profile-card">
+        <div class="profile-image">
           <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profileImage">
         </div>
-        <h1 id="profileName">Anonymous</h1>
-        <p id="profileAbout">No information provided.</p>
-      </div>
-      <div class="profile-actions">
-        <!-- Hidden file input for profile picture upload -->
-        <input type="file" id="fileInput" style="display: none;" accept="image/*">
+        <div class="profile-info">
+          <h1 class="profile-name" id="profileName"></h1>
+          <p class="username" id="profileUsername"></p>
+        </div>
+        <div class="profile-actions">
+          <!-- Edit Profile Modal -->
+          <div id="editProfileModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Edit Profile</h2>
+              <form id="editProfileForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" placeholder="Enter your first name" required />
 
-        <!-- Buttons for editing and uploading profile -->
-        <button id="editProfile">Edit Profile</button>
-        <button id="saveProfile" style="display: none;">Save</button>
-        
-        <button id="logoutButton">Logout</button>
+                <label for="profileImageUpload">Profile Image:</label>
+                <input type="file" id="profileImageUpload" accept="image/*" />
+
+                <button type="submit">Save Changes</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Trigger Button -->
+          <button id="editProfileButton">Edit Profile</button>
+          <button class="btn logout-btn" id="logoutButton">Logout</button>
+        </div>
       </div>
-    </div>
+    </main>
   </div>
-
-  <script src="../script/profile.js" type="module"></script>
+  <script type="module" src="../script/profile.js"></script>
 </body>
 </html>

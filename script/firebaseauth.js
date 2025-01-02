@@ -6,6 +6,7 @@ import {
     signInWithEmailAndPassword,
     signOut,
 } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyBPsH6vEnMZL0oyh9xV01ctvnR_o6rihQg",
     authDomain: "cinecloud-auth.firebaseapp.com",
@@ -13,14 +14,12 @@ const firebaseConfig = {
     storageBucket: "cinecloud-auth.appspot.com",
     messagingSenderId: "477162218047",
     appId: "1:477162218047:web:79efce9cf1576abd668e8a"
-  };
+};
 
-
-  // Initialize Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-
 
 // Toggle between sign-up and sign-in forms
 const signUpButton = document.getElementById('signUpButton');
@@ -56,13 +55,13 @@ toggleSignInPassword.addEventListener('click', function() {
 
 // Show general error message
 function showMessage(message, divId) {
-  const messageDiv = document.getElementById(divId);
-  messageDiv.style.display = "block";
-  messageDiv.innerHTML = message;
-  messageDiv.style.opacity = 1;
-  setTimeout(() => {
-    messageDiv.style.opacity = 0;
-  }, 5000);
+    const messageDiv = document.getElementById(divId);
+    messageDiv.style.display = "block";
+    messageDiv.innerHTML = message;
+    messageDiv.style.opacity = 1;
+    setTimeout(() => {
+        messageDiv.style.opacity = 0;
+    }, 5000);
 }
 
 // Show field-specific error
@@ -144,7 +143,12 @@ signUp.addEventListener('click', (event) => {
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+
+            // Store UID in localStorage
+            localStorage.setItem('uid', user.uid);
+
             const userData = {
+                uid: user.uid, // Save UID in Firestore
                 email: email,
                 firstName: firstName,
                 lastName: lastName,
@@ -201,8 +205,12 @@ signIn.addEventListener('click', (event) => {
         signInWithEmailAndPassword(auth, signInEmail, signInPassword)
         .then((userCredential) => {
             const user = userCredential.user;
+
+            // Store UID in localStorage
+            localStorage.setItem('uid', user.uid);
+
             showMessage('Login successful!', 'signInMessage');
-            // Redirect after login (example)
+            // Redirect after login
             window.location.href = '../pages/homepage.html'; // Adjust to your login redirect page
         })
         .catch((error) => {
@@ -211,4 +219,15 @@ signIn.addEventListener('click', (event) => {
     }
 });
 
-
+// Logout Logic
+const logoutButton = document.getElementById('logoutButton');
+logoutButton?.addEventListener('click', () => {
+    signOut(auth).then(() => {
+        // Clear UID from localStorage
+        localStorage.removeItem('uid');
+        // Redirect to login page
+        window.location.href = '../index.html';
+    }).catch((error) => {
+        console.error("Logout failed:", error.message);
+    });
+});

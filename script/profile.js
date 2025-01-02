@@ -1,7 +1,3 @@
-
-
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-storage.js";
 import { getFirestore, getDoc, doc, updateDoc } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
@@ -17,11 +13,36 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const auth = getAuth();
+const db = getFirestore(app);
 const storage = getStorage(app);
 
-// Listen for authentication state changes
+// DOM Elements
+const profileImage = document.getElementById("profileImage");
+const profileName = document.getElementById("profileName");
+const profileUsername = document.getElementById("profileUsername");
+const editProfileModal = document.getElementById("editProfileModal");
+const closeModalButton = document.querySelector(".close");
+const editProfileButton = document.getElementById("editProfileButton");
+const logoutButton = document.getElementById("logoutButton");
+
+// Modal open/close logic
+editProfileButton.addEventListener("click", () => {
+  editProfileModal.style.display = "block"; // Show the modal
+});
+
+closeModalButton.addEventListener("click", () => {
+  editProfileModal.style.display = "none"; // Close the modal
+});
+
+// Close modal if clicked outside
+window.addEventListener("click", (event) => {
+  if (event.target === editProfileModal) {
+    editProfileModal.style.display = "none"; // Close modal if clicked outside
+  }
+});
+
+// Handle Profile Data Update
 onAuthStateChanged(auth, async (user) => {
   if (user) {
     const userRef = doc(db, "users", user.uid);
@@ -29,70 +50,59 @@ onAuthStateChanged(auth, async (user) => {
 
     if (userDoc.exists()) {
       const userData = userDoc.data();
-
-      const profilePic = document.getElementById("profileImage");
-      const profileName = document.getElementById("profileName");
-      const profileAbout = document.getElementById("profileAbout");
-      const fileInput = document.getElementById("fileInput");
-
-      profilePic.src = userData.profileimg || "https://via.placeholder.com/150";
-      profileName.textContent = userData.firstName || "";
-      profileAbout.textContent = userData.email || "No information provided.";
-
-      // Enable editing profile name and about section
-      const editProfileButton = document.getElementById("editProfile");
-      const saveProfileButton = document.getElementById("saveProfile");
-
-      editProfileButton.addEventListener("click", () => {
-        profileName.contentEditable = "true";
-        profileAbout.contentEditable = "true";
-        profileName.focus();
-        editProfileButton.style.display = "none";
-        saveProfileButton.style.display = "inline-block";
-      });
-
-      saveProfileButton.addEventListener("click", async () => {
-        profileName.contentEditable = "false";
-        profileAbout.contentEditable = "false";
-        await updateDoc(userRef, {
-          firstName: profileName.textContent,
-          email: profileAbout.textContent,
-        });
-        editProfileButton.style.display = "inline-block";
-        saveProfileButton.style.display = "none";
-      });
-
-      // Enable uploading profile image
-      const uploadProfileButton = document.getElementById("uploadProfile");
-
-      uploadProfileButton.addEventListener("click", () => {
-        fileInput.click();
-      });
-
-      fileInput.addEventListener("change", async (event) => {
-        const file = event.target.files[0];
-        if (file) {
-          const storageRef = ref(storage, `profileImages/${user.uid}`);
-          await uploadBytes(storageRef, file);
-          const downloadURL = await getDownloadURL(storageRef);
-
-          // Update Firestore with the new image URL
-          await updateDoc(userRef, { profileimg: downloadURL });
-          profilePic.src = downloadURL;
-        }
-      });
-
-      // Logout functionality
-      const logoutButton = document.getElementById("logoutButton");
-      logoutButton.addEventListener("click", async () => {
-        await signOut(auth);
-        window.location.href = "../index.html"; // Redirect to login page
-      });
+      profileImage.src = userData.profileImg || "https://via.placeholder.com/150";
+      profileName.textContent = userData.firstName || "Anonymous";
     } else {
-      console.error("No such user data found!");
+      console.error("User data not found.");
     }
+
+    // Edit Profile Form submission
+    const editProfileForm = document.getElementById("editProfileForm");
+    editProfileForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const firstName = document.getElementById("firstName").value;
+      const profileImageUpload = document.getElementById("profileImageUpload").files[0];
+
+      const updates = {};
+
+      if (firstName) updates.firstName = firstName;
+
+      // If profile image is updated, upload to Cloudinary and update Firestore
+      if (profileImageUpload) {
+        const formData = new FormData();
+        formData.append("file", profileImageUpload);
+        formData.append("upload_preset", "ml_default");
+        formData.append("cloud_name", "dduesprmp");
+
+        const cloudinaryResponse = await fetch("https://api.cloudinary.com/v1_1/dduesprmp/image/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        const cloudinaryData = await cloudinaryResponse.json();
+        const profileImageUrl = cloudinaryData.secure_url;
+
+        // Update profile image URL in Firestore
+        updates.profileImg = profileImageUrl;
+        profileImage.src = profileImageUrl; // Show updated image on the page
+      }
+
+      // Update Firestore with the new data
+      const userRef = doc(db, "users", user.uid);
+      await updateDoc(userRef, updates);
+
+      alert("Profile updated successfully!");
+      editProfileModal.style.display = "none"; // Close the modal after saving changes
+    });
+
   } else {
-    console.error("No user is logged in.");
-    window.location.href = "../index.html"; // Redirect to login page
+    window.location.href = "../index.html"; // Redirect to index page if not logged in
   }
+});
+
+// Logout
+logoutButton.addEventListener("click", async () => {
+  await signOut(auth);
+  window.location.href = "../index.html"; // Redirect to index page on logout
 });
