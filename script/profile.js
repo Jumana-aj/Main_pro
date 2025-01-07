@@ -97,12 +97,12 @@ onAuthStateChanged(auth, async (user) => {
     });
 
   } else {
-    window.location.href = "../index.html"; // Redirect to index page if not logged in
+    window.location.href = "../index.html"; // #ae4242irect to index page if not logged in
   }
 });
 
 // Logout
 logoutButton.addEventListener("click", async () => {
   await signOut(auth);
-  window.location.href = "../index.html"; // Redirect to index page on logout
+  window.location.href = "../index.html"; // #ae4242irect to index page on logout
 });

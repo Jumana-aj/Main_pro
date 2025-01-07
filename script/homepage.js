@@ -118,7 +118,7 @@ function showAllMovies(category, movieContainer, viewMoreButton) {
   categoryMovies[category].forEach(movie => movieContainer.appendChild(movie));
 
   if (viewMoreButton) {
-    viewMoreButton.style.display = "none";
+    viewMoreButton.style.visibility = "hidden";
   }
 }
 

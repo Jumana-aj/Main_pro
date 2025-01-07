@@ -160,7 +160,7 @@ button:hover{
 
 }
 .error-message{
-    color: red;
+    color: #ae4242;
 }
 .eye-icon {
     position: absolute;
@@ -183,7 +183,7 @@ button:hover{
 
     .container{
         width: 90%; /* Full width on small screens */
-       padding: 1rem; /* Reduced padding */
+       padding: 1rem; /* #ae4242uced padding */
        margin: 20px auto;
        /* Adjust:margin; */
        top: 0; 

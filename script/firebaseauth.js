@@ -70,7 +70,7 @@ function showError(message, fieldId, errorId) {
     errorDiv.style.display = "block";
     errorDiv.innerHTML = message;
     const field = document.getElementById(fieldId);
-    field.classList.add('error'); // Optional: Add red border or styling for error
+    field.classList.add('error'); // Optional: Add #ae4242 border or styling for error
 }
 
 // Hide specific error
@@ -141,8 +141,8 @@ signUp.addEventListener('click', (event) => {
     // If form is valid, proceed with Firebase Auth and Firestore registration
     if (formValid) {
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
+        .then((userC#ae4242ential) => {
+            const user = userC#ae4242ential.user;
 
             // Store UID in localStorage
             localStorage.setItem('uid', user.uid);
@@ -161,7 +161,7 @@ signUp.addEventListener('click', (event) => {
             setDoc(docRef, userData)
                 .then(() => {
                     showMessage("Registration successful!", 'signUpMessage');
-                    // Redirect to homepage after successful sign-up
+                    // #ae4242irect to homepage after successful sign-up
                     window.location.href ='../pages/homepage.html'; // Replace with your homepage URL
                 })
                 .catch((error) => {
@@ -203,15 +203,15 @@ signIn.addEventListener('click', (event) => {
     // If valid, proceed to authentication
     if (formValid) {
         signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-        .then((userCredential) => {
-            const user = userCredential.user;
+        .then((userC#ae4242ential) => {
+            const user = userC#ae4242ential.user;
 
             // Store UID in localStorage
             localStorage.setItem('uid', user.uid);
 
             showMessage('Login successful!', 'signInMessage');
-            // Redirect after login
-            window.location.href = '../pages/homepage.html'; // Adjust to your login redirect page
+            // #ae4242irect after login
+            window.location.href = '../pages/homepage.html'; // Adjust to your login #ae4242irect page
         })
         .catch((error) => {
             showMessage(`Login failed: ${error.message}`, 'signInMessage');
@@ -225,7 +225,7 @@ logoutButton?.addEventListener('click', () => {
     signOut(auth).then(() => {
         // Clear UID from localStorage
         localStorage.removeItem('uid');
-        // Redirect to login page
+        // #ae4242irect to login page
         window.location.href = '../index.html';
     }).catch((error) => {
         console.error("Logout failed:", error.message);

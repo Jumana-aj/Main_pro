@@ -1,0 +1,293 @@
+/* General Reset */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(11, 11, 11);
+    background-image: url('../assets/bg_new.jpg');
+
+    background-size: cover; /* Makes sure the background image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+}
+
+
+/* Header */
+ .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color:#131415;
+    padding: 20px;
+    background-image: url('../assets/bg_new.jpg');
+
+
+}
+.logoandname {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    /* padding-left: 5%; */
+    padding-top: 1%;
+    text-decoration: none;
+} 
+.logoandname a{
+    text-decoration: none;
+    color: white;
+
+ 
+}
+.logoandname :hover{
+    color:#ae4242;
+}
+
+.search-container {
+    position: relative;
+    width: 10%; 
+    color:#555 /* Adjust as needed */;
+    /* padding-left: 20%; */
+    
+  }
+  
+ 
+  
+ 
+  
+  
+
+  .inputbox {
+    position: relative;    
+    padding: 10px 30px;
+    width: 300px;
+    border-radius: 15px;
+    border-color: #4a525f;
+    margin-top: 40%;
+    background-image:url('../assets/search.webp');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: left;
+    /* background-origin: content-box; */
+}
+
+
+    
+    .inputbox:focus{
+        outline: none;
+    }
+  
+/* Navigation Bar */
+ 
+
+
+
+.nav-item{
+    /* padding-right: 10%;
+    padding-top: 10px; */
+}
+.nav-item a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    /* padding-right: 20%;
+    padding-top: 30px; */
+}
+.nav-item :hover{
+    color:#ae4242;
+}
+
+
+.suggestions {
+    position: absolute;
+    background-color:  rgb(58, 61, 63);
+    /* border: 1px solid #f3e7e7; */
+    width: 20%;
+    border-radius: 3px;
+    height:200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    /* border-bottom: 1px solid #d6d0d0; */
+  }
+  
+  .suggestion-item:hover {
+    background-color:rgb(52, 55, 57);
+  }
+#icon{
+    color: #7f7b7b;
+    font-size:20px;
+    margin-right: 100%;
+  
+}
+
+.topic-container{
+    margin-top: 135px;
+    padding: 0px 20px;
+}
+/* Topic Section */
+.topic-section {
+    margin-bottom: 30px;
+   
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.topic-title {
+    font-size: 20px;
+  
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    padding-left: 10px;
+    font-weight: bold;
+
+    color:white;
+    
+   
+}
+
+.suggestions{
+    color: #0a0909;
+    padding-left: 20px;
+    
+}
+
+.suggestion-item{
+    width: 100px;
+    color: white;
+}
+.suggestion-item:hover{
+    color: gray;
+}
+/* Movie Posters */
+.poster-item {
+    min-width:250px;
+    height: 350px;
+   
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.poster-item img {
+    width: 240px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 3px;
+ 
+   cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.poster-item:hover,
+.poster-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Scrollable Containers */
+ .scroll-trending,
+.scroll-top-7,
+.scroll-classics,
+.scroll-90s-movies,
+.scroll-feel-good-movies,
+.scroll-horror-movies {
+    display: flex;
+    overflow-x: auto;
+ 
+    scroll-behavior:smooth;
+     gap: 5px;
+    padding: 10px;
+    border-radius: 8px;
+ } 
+
+
+
+
+
+ .scroll-trending::-webkit-scrollbar {
+    height: 8px;
+   display: none;
+}
+.scroll-90s-movies::-webkit-scrollbar{
+    height: 8px;
+   display: none;
+}
+.scroll-horror-movies::-webkit-scrollbar{
+    height: 8px;
+   display: none;
+}
+.scroll-feel-good-movies::-webkit-scrollbar{
+    height: 8px;
+   display: none;
+}
+.scroll-top-7::-webkit-scrollbar{
+    height: 8px;
+   display: none;
+}
+.scroll-classics::-webkit-scrollbar{
+    height: 8px;
+   display: none;
+}  
+
+.scroll-trending::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+
+}  
+ 
+.scroll-trending::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    display: none;
+}   
+
+
+ .view-more {
+    position: relative;
+    display: block; 
+    margin-top: 20px;
+    text-decoration: none;
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+    left: 93%;
+}
+.view-more:hover {
+    color:#ae4242;
+} 
+
+
+/* Footer */
+ footer {
+    background-color: #3a3737;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+  

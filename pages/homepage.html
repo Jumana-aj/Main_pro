@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Homepage</title>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="stylesheet" href="../css/homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
 
   </style>
@@ -16,58 +19,69 @@
   <div class="container">
     <!-- Header section -->
     <div class="header">
+
       
-      
-      <div class="logoandname">Cinecloud</div>
+      <div class="logoandname"><a href="../pages/homepage.html">Cinecloud</a></div>
+
 
       <!-- Navigation bar -->
-      <div class="navbar">
-        <div class="nav-item search">
-          <input type="text" class="inputbox" id="searchBox" placeholder="Search for a movie...">
-          <div class="suggestions" id="suggestions" ></div>
-        
+
+      <div class="nav-item search">
+        <div class="search-container">
+          <!-- <i class="fa-solid fa-magnifying-glass" id="icon"></i> -->
+          <input type="text" class="inputbox" id="searchBox">
         </div>
 
-        <div class="nav-item"><a href="#">Home</a></div>
-        <div class="nav-item"><a href="../pages/profile.html">MySpace</a></div>
+
+        <div class="suggestions" id="suggestions"></div>
+
       </div>
-    </div>
+<div class="nav-item"><a href="../pages/live.html">Live</a></div>
+<div class="nav-item"><a href="../pages/Favorites.html">Favorites</a></div>
+      <div class="nav-item"><a href="../pages/profile.html">MySpace</a></div>
+  
 
-    <!-- Movie Categories -->
-    <div class="topic-section">
-      <div class="topic-title first-topic">Trending</div>
-      <div class="scroll-trending"></div>
-      <a href="#" class="view-more">view more</a>
+      
     </div>
+    <div class="topic-container">
+      <!-- Movie Categories -->
+      <div class="topic-section">
+        <div class="topic-title">Trending</div>
+        <div class="scroll-trending">
+          
+        </div>
+        <a href="#" class="view-more">view more</a>
+      </div>
 
-    <div class="topic-section">
-      <div class="topic-title">Top-9 Rated Movies</div>
-      <div class="scroll-top-7"></div>
-      <a href="#" class="view-more">view more</a>
-    </div>
-    
-    <div class="topic-section">
-      <div class="topic-title">Classics</div>
-      <div class="scroll-classics"></div>
-      <a href="#" class="view-more">view more</a>
-    </div>
+      <div class="topic-section">
+        <div class="topic-title">Top-9 Rated Movies</div>
+        <div class="scroll-top-7"></div>
+        <a href="#" class="view-more">view more</a>
+      </div>
 
-    <div class="topic-section">
-      <div class="topic-title">90s Movies</div>
-      <div class="scroll-90s-movies"></div>
-      <a href="#" class="view-more">view more</a>
-    </div>
+      <div class="topic-section">
+        <div class="topic-title">Classics</div>
+        <div class="scroll-classics"></div>
+        <a href="#" class="view-more">view more</a>
+      </div>
 
-    <div class="topic-section">
-      <div class="topic-title">Feel-Good Movies</div>
-      <div class="scroll-feel-good-movies"></div>
-      <a href="#" class="view-more">view more</a>
-    </div>
+      <div class="topic-section">
+        <div class="topic-title">90s Movies</div>
+        <div class="scroll-90s-movies"></div>
+        <a href="#" class="view-more">view more</a>
+      </div>
 
-    <div class="topic-section">
-      <div class="topic-title">Horror Movies</div>
-      <div class="scroll-horror-movies"></div>
-      <a href="#" class="view-more">view more</a>
+      <div class="topic-section">
+        <div class="topic-title">Feel-Good Movies</div>
+        <div class="scroll-feel-good-movies"></div>
+        <a href="#" class="view-more">view more</a>
+      </div>
+
+      <div class="topic-section">
+        <div class="topic-title">Horror Movies</div>
+        <div class="scroll-horror-movies"></div>
+        <a href="#" class="view-more">view more</a>
+      </div>
     </div>
   </div>
 
@@ -75,15 +89,15 @@
   <footer>
     <div class="footer">
       "Welcome to Cinecloud, your ultimate destination for streaming premium content,
-      including movies, TV shows, documentaries, and exclusive originals."
+      including movies, TV shows, documentaries, and exclusive originals.&copy;2025"
     </div>
   </footer>
 
   <!-- Scripts -->
-  
- 
+
+
   <script type="module" src="../script/homepage.js"></script>
-  
+
 </body>
 
 </html>

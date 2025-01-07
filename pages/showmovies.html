@@ -7,22 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Details</title>
     <link rel="stylesheet" href="../css/showmovie.css">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
     <div class="container">
         <div class="header">
-            <div class="logoandname">CineCloud</div>
+            <div class="logoandname"><a href="../pages/homepage.html">Cinecloud</a></div>
             <div class="navbar">
                 <div class="nav-item search">
                     <!-- <input type="text" class="inputbox" id="searchInput" placeholder="Search for a movie...">
                     <div class="suggestions" id="suggestionsBox" style="display: none;"></div> -->
-                  
-                  </div>
-                <div class="nav-item"><a href="./homepage.html">Home</a></div>
                 
-                <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+                  </div>
+               
+               
+      
             </div>
+            <div class="nav-item"><a href="./live.html">Live</a></div>
+            <div class="nav-item"><a href="./Favorites.html">Favorites</a></div>
+            <div class="nav-item"><a href="./profile.html">MySpace</a></div>
+            
         </div>
 
         <div class="detail-container">
@@ -38,6 +46,9 @@
                     <p><strong>Language: <span id="movie-language"></span></strong></p>
                     <p><strong>Plot Summary:<span id="movie-plot"></span></strong> </p>
                     <button id="play-button">Play</button>
+                    <button class="heart-btn" id="likeBtn">
+                        <i class="fas fa-heart"></i>
+                      </button>
                 </div>
                 
             </div>
@@ -47,7 +58,24 @@
        
     </div>
     <video id="video-link" controls></video>
-   
+    <style>
+     .heart-btn {
+            font-size: 24px;
+            color: gray;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .heart-btn.active {
+            color: red;
+        }
+
+           </style>
 
     <script type="module" src="../script/showmovie.js"></script>
 </body>

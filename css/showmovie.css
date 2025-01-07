@@ -1,5 +1,4 @@
-
-
+/* General Reset */
 
 * {
     margin: 0;
@@ -9,10 +8,16 @@
 
 body, html {
     width: 100%;
-    font-family: 'Arial, Helvetica, sans-serif';
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-x: hidden;
-    background-color: #0a0909;
+    background-color: rgb(11, 11, 11);
+    background-image: url('../assets/bg_new.jpg');
+
+    background-size: cover; /* Makes sure the background image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
 }
+
 
 /* Header */
  .header {
@@ -24,52 +29,49 @@ body, html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2F3C7E;
-    color: white;
-    padding: 10px;
-}
+    background-color: black;
+    color:#131415;
+    padding: 20px;
+    background-image: url('../assets/bg_new.jpg');
 
+
+}
 .logoandname {
-    font-family: 'Arial, Helvetica, sans-serif';
-    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
     font-weight: bold;
-    color: #fff;
-    padding-left: 2%;
-} 
-
-/* Navigation Bar */
- .navbar {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: 25px;
-   
-}
-
-.navbar a {
-    color: rgb(229, 229, 240);
+    color:white;
+    /* padding-left: 5%; */
+    padding-top: 1%;
     text-decoration: none;
-    padding: 10px 20px;
-    padding-bottom: 40px;
-    font-family: 'Times New Roman', Times, serif;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #5198bf;
 } 
+.logoandname a{
+    text-decoration: none;
+    color: white;
 
-
-
-
-
-.inputbox {
-position: relative;
-padding: 10px;
-width: 300px;
-border-radius: 20px;
-border: none;
+ 
 }
+.logoandname :hover{
+    color:#ae4242;
+}
+.nav-item{
+    /* padding-right: 10%;
+    padding-top: 10px; */
+}
+.nav-item a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-weight: bold;
+    /* padding-right: 20%;
+    padding-top: 30px; */
+}
+.nav-item :hover{
+    color:#ae4242;
+}
+
+
+
 
 
 
@@ -104,7 +106,9 @@ border: none;
     align-items: center;
     gap: 40px;
     margin: 120px auto 40px; /* Add margin-top to avoid overlap with fixed navbar */
-    background:white;
+    /* background:rgba(69, 68, 68, 0.5); */
+    /* background-image: url('../assets/bg_new.jpg'); Update with your image file path */
+    background:rgba(0,0,0,0.5);
     padding: 30px;
     max-width: 1200px;
     border-radius: 12px;
@@ -147,19 +151,24 @@ border: none;
 }
 
 .movie-info h1 {
-    color: #4800ff;
-    font-size: 36px;
+    color:white;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin-bottom: 10px;
 }
 
 .movie-info p {
-    font-size: 18px;
-    color: #6069ea;
+    font-size: 15px;
+    color: white;
     line-height: 1.6;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 .movie-info strong {
-    color: #6894e6;
+    color:white;
+   
 }
 
 #play-button {
@@ -168,16 +177,17 @@ border: none;
     padding: 12px 25px;
     font-size: 18px;
     font-weight: bold;
-    color: #121212;
-    background-color: #FFD700;
-    border: none;
+    color: white;
+    background-color: grey;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 8px;
+    border-color: #ffffff;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #play-button:hover {
-    background-color: #2349a1;
+    background-color:#1E1E2E;
     transform: scale(1.1);
 }
 
@@ -188,6 +198,7 @@ border: none;
     width: 100%;
     border-radius: 10px;
     animation: fadeIn 1s ease-in-out;
+    height: 95vh;
 }
 
 /* Responsive Design */
