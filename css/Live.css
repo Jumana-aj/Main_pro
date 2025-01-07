@@ -70,9 +70,9 @@ body, html {
 
 
 .live-stream{
+   margin-top: 300px;
+   margin-left: 450px;
    
+
 }
-.embed-responsive embed-responsive-16by9{
-    position: relative;
-    top:50%
-}
+
