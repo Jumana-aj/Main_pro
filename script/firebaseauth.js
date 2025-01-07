@@ -141,8 +141,8 @@ signUp.addEventListener('click', (event) => {
     // If form is valid, proceed with Firebase Auth and Firestore registration
     if (formValid) {
         createUserWithEmailAndPassword(auth, email, password)
-        .then((userC#ae4242ential) => {
-            const user = userC#ae4242ential.user;
+        .then((userCredential) => {
+            const user = userCredential.user;
 
             // Store UID in localStorage
             localStorage.setItem('uid', user.uid);
@@ -203,8 +203,8 @@ signIn.addEventListener('click', (event) => {
     // If valid, proceed to authentication
     if (formValid) {
         signInWithEmailAndPassword(auth, signInEmail, signInPassword)
-        .then((userC#ae4242ential) => {
-            const user = userC#ae4242ential.user;
+        .then((userCredential) => {
+            const user = userCredential.user;
 
             // Store UID in localStorage
             localStorage.setItem('uid', user.uid);
