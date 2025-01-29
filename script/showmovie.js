@@ -1,6 +1,6 @@
 // Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, doc, getDoc, query, where,updateDoc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -40,7 +40,6 @@ async function fetchMovieDetails() {
     document.getElementById("video-link").src = movieDetails.video_link;
 }
 
-// Wishlist and like button functionality
 const likebtn = document.getElementById("likeBtn");
 
 // Check and restore the like state on page load
@@ -49,7 +48,7 @@ if (whishlist.includes(movieDetails.title)) {
     likebtn.classList.add("active");
 }
 
-// Add or remove from the wishlist on click
+
 likebtn.addEventListener("click", () => {
     toggleWishlist(movieDetails.title);
 });
@@ -62,16 +61,84 @@ function toggleWishlist(moviename) {
         whishlist = whishlist.filter(item => item !== moviename);
         likebtn.classList.remove("active");
         alert(`"${moviename}" has been removed from your wishlist`);
+        removeWishlist()
     } else {
         // Add to wishlist
         whishlist.push(moviename);
         likebtn.classList.add("active");
         alert(`"${moviename}" has been added to your wishlist`);
+        addWishlist()
     }
 
-    // Save the updated wishlist to localStorage
     localStorage.setItem("whishlist", JSON.stringify(whishlist));
 }
 
 // Load movie details on page load
 fetchMovieDetails();
+async function addWishlist() {
+    const userUID = localStorage.getItem("uid");
+    const userDocRef = doc(db, "users", userUID);
+    const docSnapshot = await getDoc(userDocRef);
+    const username = docSnapshot.data().firstName;
+    const wishlist = docSnapshot.data().wishlist;
+    const movieID = localStorage.getItem("movieID");
+    wishlist.push(movieID);
+    await updateDoc(userDocRef, {
+        wishlist: wishlist 
+    });
+}
+
+async function removeWishlist() {
+    const userUID = localStorage.getItem("uid");
+    const userDocRef = doc(db, "users", userUID);
+    const docSnapshot = await getDoc(userDocRef);
+    const username = docSnapshot.data().firstName;
+    const wishlist = docSnapshot.data().wishlist;
+    const movieID = localStorage.getItem("movieID");
+    wishlist.pop(movieID);
+    await updateDoc(userDocRef, {
+        wishlist: wishlist 
+    });
+}
+
+
+
+function filterMovies(searchTerm) {
+    const suggestionsBox = document.getElementById("suggestions");
+    const movieDivs = document.querySelectorAll(".poster-item[title]");
+    suggestionsBox.innerHTML = "";
+  
+    movieDivs.forEach((div) => {
+      const movieTitle = div.getAttribute("title");
+      if (movieTitle && movieTitle.toLowerCase().includes(searchTerm.toLowerCase())) {
+        const suggestionItem = document.createElement("div");
+        suggestionItem.className = "suggestion-item";
+        suggestionItem.textContent = movieTitle;
+  
+        suggestionItem.addEventListener("click", () => {
+          const matchedMovie = Array.from(movieDivs).find(
+            (d) => d.getAttribute("title").toLowerCase() === movieTitle.toLowerCase()
+          );
+          if (matchedMovie) {
+            matchedMovie.querySelector("img").click();
+          }
+        });
+  
+        suggestionsBox.appendChild(suggestionItem);
+      }
+    });
+  
+    suggestionsBox.style.display = suggestionsBox.innerHTML ? "block" : "none";
+  }
+  
+  // Attach search filter to input
+  const searchBox = document.getElementById("searchBox");
+  searchBox.addEventListener("input", () => {
+    const searchTerm = searchBox.value;
+    if (searchTerm) {
+      filterMovies(searchTerm);
+    } else {
+      const suggestionsBox = document.getElementById("suggestions");
+      suggestionsBox.style.display = "none";
+    }
+  });

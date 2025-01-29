@@ -165,13 +165,15 @@ body, html {
 
 .suggestions{
     color: #0a0909;
-    padding-left: 20px;
+    padding-left: 2px;
+   
     
 }
 
 .suggestion-item{
     width: 100px;
     color: white;
+
 }
 .suggestion-item:hover{
     color: gray;
@@ -219,11 +221,8 @@ body, html {
      gap: 5px;
     padding: 10px;
     border-radius: 8px;
+   
  } 
-
-
-
-
 
  .scroll-trending::-webkit-scrollbar {
     height: 8px;
@@ -280,12 +279,90 @@ body, html {
 
 /* Footer */
  footer {
-    background-color: #3a3737;
+    background-color:black;
     color: white;
     font-size: 20px;
     padding: 20px;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Navbar */
+@media only screen and (max-width: 900px) {
+    .header {
+        flex-direction: row;
+       gap: 10px;
+    }
+
+    .nav-item {
+        display: block;
+        text-align: center;
+        /* margin: 10px 0; */
+    }
+
+    .nav-item a {
+        font-size: 18px;
+    }
+}
+
+/* View More Button */
+@media only screen and (max-width: 600px) {
+    .view-more {
+        font-size: 14px;
+        left: 85%; /* Adjust the position for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .view-more {
+        font-size: 12px;
+        left: 75%; /* Adjust the position for very small screens */
+    }
+}
+
+/* Footer */
+@media only screen and (max-width: 600px) {
+    footer {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    footer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Search Bar Suggestions */
+@media only screen and (max-width: 900px) {
+    .search-container {
+        width: 100%; /* Make the search bar take full width on smaller screens */
+        margin-top: 10px;
+    }
+
+    .inputbox {
+        width: 100%; /* Expand the input box to full width */
+        margin-top: 10px;
+    }
+
+    .suggestions {
+        width: 100%; /* Suggestions box takes full width */
+        height: auto; /* Auto height to adjust based on content */
+        max-height: 200px; /* Limit max height to avoid overflow */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .suggestions {
+        width: 100%; /* Ensure suggestions box is full-width */
+        font-size: 13px; /* Slightly smaller font size */
+    }
+
+    .suggestion-item {
+        padding: 8px; /* Smaller padding for suggestion items */
+    }
 }
 
 

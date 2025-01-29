@@ -26,19 +26,18 @@ const closeModalButton = document.querySelector(".close");
 const editProfileButton = document.getElementById("editProfileButton");
 const logoutButton = document.getElementById("logoutButton");
 
-// Modal open/close logic
+
 editProfileButton.addEventListener("click", () => {
-  editProfileModal.style.display = "block"; // Show the modal
+  editProfileModal.style.display = "block"; 
 });
 
 closeModalButton.addEventListener("click", () => {
-  editProfileModal.style.display = "none"; // Close the modal
+  editProfileModal.style.display = "none"; 
 });
 
-// Close modal if clicked outside
 window.addEventListener("click", (event) => {
   if (event.target === editProfileModal) {
-    editProfileModal.style.display = "none"; // Close modal if clicked outside
+    editProfileModal.style.display = "none"; 
   }
 });
 
@@ -68,7 +67,7 @@ onAuthStateChanged(auth, async (user) => {
 
       if (firstName) updates.firstName = firstName;
 
-      // If profile image is updated, upload to Cloudinary and update Firestore
+      
       if (profileImageUpload) {
         const formData = new FormData();
         formData.append("file", profileImageUpload);
@@ -83,9 +82,9 @@ onAuthStateChanged(auth, async (user) => {
         const cloudinaryData = await cloudinaryResponse.json();
         const profileImageUrl = cloudinaryData.secure_url;
 
-        // Update profile image URL in Firestore
+       
         updates.profileImg = profileImageUrl;
-        profileImage.src = profileImageUrl; // Show updated image on the page
+        profileImage.src = profileImageUrl; 
       }
 
       // Update Firestore with the new data
@@ -93,16 +92,16 @@ onAuthStateChanged(auth, async (user) => {
       await updateDoc(userRef, updates);
 
       alert("Profile updated successfully!");
-      editProfileModal.style.display = "none"; // Close the modal after saving changes
+      editProfileModal.style.display = "none"; 
     });
 
   } else {
-    window.location.href = "../index.html"; // #ae4242irect to index page if not logged in
+    window.location.href = "../index.html";
   }
 });
 
 // Logout
 logoutButton.addEventListener("click", async () => {
   await signOut(auth);
-  window.location.href = "../index.html"; // #ae4242irect to index page on logout
+  window.location.href = "../index.html"; 
 });

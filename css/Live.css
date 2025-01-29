@@ -16,9 +16,8 @@ body, html {
     background-attachment: fixed; /* Keeps the background image fixed while scrolling */
 }
 
-
 /* Header */
- .header {
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -31,48 +30,183 @@ body, html {
     color:#131415;
     padding: 20px;
     background-image: url('../assets/bg_new.jpg');
-
-
 }
+
 .logoandname {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20px;
     font-weight: bold;
     color:white;
-    /* padding-left: 5%; */
     padding-top: 1%;
     text-decoration: none;
 } 
-.logoandname a{
+
+.logoandname a {
     text-decoration: none;
     color: white;
-
- 
 }
-.logoandname :hover{
+
+.logoandname :hover {
     color:#ae4242;
 }
-.nav-item{
-    /* padding-right: 10%;
-    padding-top: 10px; */
+
+.nav-item {
+    /* padding-right: 10%; padding-top: 10px; */
 }
-.nav-item a{
+
+.nav-item a {
     text-decoration: none;
     color:white;
     font-size: 20px;
     font-weight: bold;
-    /* padding-right: 20%;
-    padding-top: 30px; */
 }
-.nav-item :hover{
+
+.nav-item :hover {
     color:#ae4242;
 }
-
-
-.live-stream{
-   
-}
-.embed-responsive embed-responsive-16by9{
+.search-container {
     position: relative;
-    top:50%
+    width: 10%; 
+    color:#555 /* Adjust as needed */;
+    /* padding-left: 20%; */
+    
+  }
+  
+ 
+  
+ 
+  
+  
+
+  .inputbox {
+    position: relative;    
+    padding: 10px 30px;
+    width: 300px;
+    border-radius: 15px;
+    border-color: #4a525f;
+    margin-top: 40%;
+    background-image:url('../assets/search.webp');
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: left;
+    /* background-origin: content-box; */
+}
+
+
+    
+    .inputbox:focus{
+        outline: none;
+    }
+.suggestions {
+    position: absolute;
+    background-color:  rgb(58, 61, 63);
+    /* border: 1px solid #f3e7e7; */
+    width: 20%;
+    border-radius: 3px;
+    height:200px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none;
+  }
+  
+  .suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    /* border-bottom: 1px solid #d6d0d0; */
+  }
+  
+  .suggestion-item:hover {
+    background-color:rgb(52, 55, 57);
+  }
+#icon{
+    color: #7f7b7b;
+    font-size:20px;
+    margin-right: 100%;
+  
+}
+/* Embed Responsive */
+.embed-responsive.embed-responsive-16by9 {
+    position: relative;
+    top: 80%;
+}
+
+#live-container {
+    position: absolute;
+    top: 18%;
+    left: 23%;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 900px) {
+    .header {
+        flex-direction:row;
+        padding: 15px;
+    }
+
+    .logoandname {
+        font-size: 18px;
+        padding-top: 10px;
+    }
+
+    .nav-item a {
+        font-size: 18px;
+    }
+
+    #live-container {
+        left: 10%; /* Adjust the live container position for smaller screens */
+        top: 50%; /* Center vertically on smaller screens */
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        padding: 10px;
+        flex-direction: row; /* Stack header elements vertically */
+        align-items: center;
+    }
+
+    .logoandname {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .nav-item a {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    #live-container {
+        left: 0%; /* Adjust left position for very small screens */
+        top: 60%; /* Adjust top position */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .header {
+        padding: 8px;
+        flex-direction: row; /* Stack header elements vertically */
+        align-items: center;
+    }
+
+    .logoandname {
+        font-size: 14px;
+    }
+
+    .nav-item a {
+        font-size: 14px;
+    }
+
+    #live-container {
+        left: 0%; /* Ensure live container fits on very small screens */
+        top: 70%; /* Adjust vertical position */
+    }
+
+    /* Embed responsiveness */
+    .embed-responsive.embed-responsive-16by9 {
+        top: 50%; /* Adjust top for smaller screens */
+    }
 }

@@ -14,11 +14,9 @@ const firebaseConfig = {
   appId: "1:477162218047:web:79efce9cf1576abd668e8a"
 };
 
-// Initialize Firebase and Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Global variable for categoryMovies
 const categoryMovies = {};
 
 // Load JSON and upload to Firestore
@@ -68,6 +66,7 @@ async function fetchAndDisplayData() {
 
     querySnapshot.forEach((doc) => {
       const data = doc.data();
+      const movieID = doc.id;
       if (!data.category || !data.movieimg || !data.title) return;
 
       if (!categoryMovies[data.category]) {
@@ -84,6 +83,7 @@ async function fetchAndDisplayData() {
 
       img.addEventListener("click", () => {
         localStorage.setItem("movie-details", JSON.stringify(data));
+        localStorage.setItem("movieID" ,movieID)
         window.location.href = "../pages/showmovies.html";
       });
 
@@ -122,7 +122,6 @@ function showAllMovies(category, movieContainer, viewMoreButton) {
   }
 }
 
-// Filter movies by search term
 function filterMovies(searchTerm) {
   const suggestionsBox = document.getElementById("suggestions");
   const movieDivs = document.querySelectorAll(".poster-item[title]");
@@ -165,5 +164,4 @@ searchBox.addEventListener("input", () => {
 
 // Initialize functions
 fetchAndDisplayData();
-// Uncomment the following line to load data from JSON file
-// loadJsonData();
+

@@ -153,7 +153,8 @@ signUp.addEventListener('click', (event) => {
                 firstName: firstName,
                 lastName: lastName,
                 age: age,
-                gender: gender
+                gender: gender,
+                wishlist:[]
             };
 
             // Save user data in Firestore
@@ -161,7 +162,7 @@ signUp.addEventListener('click', (event) => {
             setDoc(docRef, userData)
                 .then(() => {
                     showMessage("Registration successful!", 'signUpMessage');
-                    // #ae4242irect to homepage after successful sign-up
+                    // redirect to homepage after successful sign-up
                     window.location.href ='../pages/homepage.html'; // Replace with your homepage URL
                 })
                 .catch((error) => {
@@ -210,8 +211,8 @@ signIn.addEventListener('click', (event) => {
             localStorage.setItem('uid', user.uid);
 
             showMessage('Login successful!', 'signInMessage');
-            // #ae4242irect after login
-            window.location.href = '../pages/homepage.html'; // Adjust to your login #ae4242irect page
+            // redirect after login
+            window.location.href = '../pages/homepage.html'; // Adjust to your login ridirect page
         })
         .catch((error) => {
             showMessage(`Login failed: ${error.message}`, 'signInMessage');
@@ -225,7 +226,7 @@ logoutButton?.addEventListener('click', () => {
     signOut(auth).then(() => {
         // Clear UID from localStorage
         localStorage.removeItem('uid');
-        // #ae4242irect to login page
+        //redirect to login page
         window.location.href = '../index.html';
     }).catch((error) => {
         console.error("Logout failed:", error.message);

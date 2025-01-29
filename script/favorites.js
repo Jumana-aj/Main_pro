@@ -1,6 +1,6 @@
 // Import Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getFirestore, collection , getDocs , query ,where } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+import { getFirestore, collection , getDocs , query ,where,getDoc,doc } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
 
 // Firebase configuration
 const firebaseConfig = {
@@ -40,7 +40,6 @@ try {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       console.log(data)
-      // Create the wishlist item element
       const movieItem = document.createElement("div");
       movieItem.className = "wishlist-item";
       movieItem.innerHTML = `
@@ -61,14 +60,19 @@ try {
 }
 }
   function removeFromWishlist(movieName) {
-// Retrieve the current wishlist from localStorage
+
 let wishlist = JSON.parse(localStorage.getItem("whishlist")) || [];
-// Filter out the movie to be removed
+
 wishlist = wishlist.filter((movie) => movie !== movieName);
-// Update the localStorage with the modified wishlist
+
 localStorage.setItem("whishlist", JSON.stringify(wishlist));
-// Re-display the updated wishlist
+
 displayWishlist();
 }
-  // Call `displayWishlist()` when the page loads
   displayWishlist();
+
+
+
+
+
+
